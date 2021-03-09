@@ -1,4 +1,4 @@
-var url = "http://flask-lpnu.herokuapp.com/user/login/";
+var url = "https://flask-lpnu.herokuapp.com/user/login/";
 var data = {username: "taras", password: "admin"};
 var datatype = 'jsonp';
 
