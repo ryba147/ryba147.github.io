@@ -1,0 +1,199 @@
+/* The style file should be the only Sass file from the whole code base not to begin with an underscore.
+This file should not contain anything but @import and comments. */
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap");
+a {
+  color: #0e1111;
+  transition: all 0.4s;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+a:visited {
+  color: #0e1111;
+}
+
+a:hover {
+  color: #004F6D;
+  cursor: pointer;
+}
+
+/* contained within this file are all your resets, variables, mixins, and any utility classes */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* anything reusable such as buttons, navbars, cards etc. */
+/* While layout/ is macro (defining the global wireframe), components/ is more focused on widgets.
+It contains all kind of specific modules like a slider, a loader, a widget, and basically anything along those lines.
+There are usually a lot of files in components/ since the whole site/application
+should be mostly composed of tiny modules. */
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.login-button-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login-form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  border-radius: 3px;
+  background: #FF6C73;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.4s;
+}
+
+.login-form-button:hover {
+  background: #333333;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.2;
+  outline: none;
+  border: 1px solid #333333;
+  border-radius: 5px;
+}
+
+input::-webkit-input-placeholder {
+  color: #666666;
+}
+
+.red-input:focus {
+  border: 2px solid #FF6C73;
+}
+
+/* contains all the CSS that handles the layout, such as the container and any grid systems */
+.heading {
+  color: #0e1111;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  text-align: center;
+  padding: 15px 0 15px 0;
+}
+
+.login-form-container {
+  background-color: #FFFFFF;
+  width: 70%;
+  height: max-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.login-form-container {
+  /* IMAGE PART */
+}
+.login-form-container .left-part img {
+  float: left;
+  width: 50%;
+  height: 550px;
+  object-fit: cover;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .login-form-container .left-part img {
+    width: 40%;
+  }
+}
+@media (max-width: 768px) {
+  .login-form-container .left-part img {
+    width: 0;
+    display: none;
+  }
+}
+.login-form-container .login-form {
+  box-sizing: border-box;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 110px 65px 0 55px;
+}
+@media (max-width: 992px) {
+  .login-form-container .login-form {
+    width: 60%;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+@media (max-width: 768px) {
+  .login-form-container .login-form {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.login-form-container .title {
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #0e1111;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 34px;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+.login-form-container .link-txt, .login-form-container .link2-txt, .login-form-container .link1-txt {
+  width: 100%;
+  color: #0e1111;
+  font-size: 14px;
+  font-family: "Dosis", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.login-form-container .link1-txt {
+  padding-bottom: 95px;
+  padding-top: 15px;
+}
+.login-form-container .link2-txt {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .link2-txt {
+    padding-bottom: 51px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap');
+
+$base-font-family: 'Dosis', sans-serif;
+
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+a {
+  color: $primary-color;
+  transition: $transition-default;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+a:visited {
+  color: $primary-color;
+}
+
+a:hover {
+  color: $dark-blue;
+  cursor: pointer;
+}

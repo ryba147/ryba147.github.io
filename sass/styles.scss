@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* The style file should be the only Sass file from the whole code base not to begin with an underscore.
+This file should not contain anything but @import and comments. */
+
+
+//Abstracts
+@import "abstracts/__abstracts-dir";
+
+//Base Styles
+@import "base/__base-dir";
+
+//Components
+@import "components/__components-dir";
+
+//Layout
+@import "layouts/__layouts-dir";
+
+//Vendor
