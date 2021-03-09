@@ -101,7 +101,7 @@ input::-webkit-input-placeholder {
 
 /* contains all the CSS that handles the layout, such as the container and any grid systems */
 .content-container {
-  padding-bottom: 12px;
+  padding-bottom: 14px;
 }
 
 .heading {
