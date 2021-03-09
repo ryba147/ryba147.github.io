@@ -100,6 +100,10 @@ input::-webkit-input-placeholder {
 }
 
 /* contains all the CSS that handles the layout, such as the container and any grid systems */
+.content-container {
+  padding-bottom: 12px;
+}
+
 .heading {
   color: #0e1111;
   font-family: "Dosis", sans-serif;
@@ -119,6 +123,9 @@ input::-webkit-input-placeholder {
   overflow: hidden;
 }
 
+.login-form-container {
+  /* IMAGE PART */
+}
 .login-form-container .left-part img {
   float: left;
   width: 50%;
