@@ -119,9 +119,6 @@ input::-webkit-input-placeholder {
   overflow: hidden;
 }
 
-.login-form-container {
-  /* IMAGE PART */
-}
 .login-form-container .left-part img {
   float: left;
   width: 50%;
@@ -198,7 +195,6 @@ input::-webkit-input-placeholder {
     width: 90%;
   }
 }
-
 @media (max-width: 992px) {
   .login-form-container {
     width: 90%;
