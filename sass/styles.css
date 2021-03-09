@@ -169,7 +169,6 @@ input::-webkit-input-placeholder {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding-bottom: 34px;
-  text-align: center;
   width: 100%;
   display: block;
 }
@@ -193,6 +192,16 @@ input::-webkit-input-placeholder {
 @media (max-width: 768px) {
   .link2-txt {
     padding-bottom: 51px;
+  }
+
+  .login-form-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .login-form-container {
+    width: 90%;
   }
 }
 
