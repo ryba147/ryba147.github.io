@@ -16,7 +16,8 @@ $(document).ready(function () {
                 alert("Denied");
             }
             else {
-                alert("Approved");
+                // alert("Approved");
+                location.href = "../index.html";
             }
         });
         event.preventDefault();

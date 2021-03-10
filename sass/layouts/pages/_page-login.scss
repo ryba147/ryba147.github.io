@@ -11,7 +11,7 @@
   padding: 15px 0 15px 0;
 }
 
-.login-form-container {
+.form-container {
   background-color: $white;
   width: 70%;
   height: max-content;
@@ -23,8 +23,7 @@
   overflow: hidden;
 }
 
-.login-form-container {
-  /* IMAGE PART */
+.form-container {
   .left-part img {
     float: left;
     width: 50%;
@@ -102,13 +101,13 @@
     padding-bottom: 51px;
   }
 
-  .login-form-container {
+  .form-container {
     width: 90%;
   }
 }
 
 @media (max-width: 992px) {
-  .login-form-container {
+  .form-container {
     width: 90%;
   }
 }
