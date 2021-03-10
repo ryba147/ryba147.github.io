@@ -10,7 +10,7 @@ $(document).ready(function () {
                 password: $('#passwordInput').val()
             },
             type: 'GET',
-            url
+            url: url,
         }).done(function (data) {
             if (data.error) {
                 alert("Denied");
