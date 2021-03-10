@@ -7,15 +7,15 @@ $(document).ready(function () {
             url: "https://flask-lpnu.herokuapp.com/user/",
             type: "POST",
             data:
-                // $('form').serialize(),
-                JSON.stringify({
-                    "username": "taras1",
-                    "email": "taras1@taras.com",
-                    "firstname": "Taras",
-                    "lastname": "Vilinskyi",
-                    "password": "admin1",
-                    "location": 123
-                }),
+                $('form').serialize(),
+                // JSON.stringify({
+                //     "username": "taras1",
+                //     "email": "taras1@taras.com",
+                //     "firstname": "Taras",
+                //     "lastname": "Vilinskyi",
+                //     "password": "admin1",
+                //     "location": 123
+                // }),
             contentType: "application/json; charset=utf-8",
             datatype: datatype,
         }).done(function (data) {
