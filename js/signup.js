@@ -1,5 +1,6 @@
 window.onload = function() {
     const apiUrl = "https://flask-lpnu.herokuapp.com/user/";
+    // const apiUrl = "http://127.0.0.1:5000/user/";
     var logregForm = document.getElementById("signup-form");
 
     logregForm.onsubmit = function (event) {
