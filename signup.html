@@ -6,36 +6,98 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/validators.js"></script>
-    <script type="text/javascript" src="js/signup.js"></script>
+    <!--    <script type="text/javascript" src="js/z.js"></script>-->
 </head>
 <body>
 <div class="content-container">
     <div class="heading">Antise</div>
     <div class="form-container">
-        <div class="left-part"><img src="../img/8244.jpg" alt="Logreg image"></div>
+        <!--        <div class="left-part"><img src="../img/8244.jpg" alt="Logreg image"></div>-->
+        <div class="left-part"><img src="img/8244.jpg" alt="Logreg image"></div>
         <div class="right-part">
-            <form id="f_id" class="signup-form" action="">
+
+            <form id="signup-form" class="logreg-form" action="">
                 <div class="title">Sign up</div>
-                <input class="red-input" type="text" id="firstnameInput"
-                       placeholder="First name" required minlength="3" maxlength="14" value="taras1">
-                <input class="red-input" type="text" id="lastnameInput"
-                       placeholder="Last name" required minlength="3" maxlength="14" value="taras1">
-                <input class="red-input" type="text" id="emailInput"
-                       placeholder="Email" required minlength="5" maxlength="14" value="taras1@gmail.com">
-                <input class="red-input" type="text" id="usernameInput"
-                       placeholder="Username" required minlength="5" maxlength="14" value="taras1_bmx">
-                <input type="password" placeholder="Password" id="password" required minlength="5" maxlength="14" value="tarastaras">
-                <input type="password" placeholder="Confirm password" id="confirm_password" required value="tarastaras">
+
+                <label for="firstnameInput">First name</label>
+                <input class="red-input" type="text" id="firstnameInput" required minlength="3" maxlength="16" value="taras">
+                <label for="lastnameInput">Last name</label>
+                <input class="red-input" type="text" id="lastnameInput" required minlength="3" maxlength="16" value="vilinskyi">
+
+                <label for="emailInput">Email</label>
+                <input class="red-input" type="text" id="emailInput" required minlength="3" maxlength="45" value="wood@gmail.com">
+
+                <label for="usernameInput">Username</label>
+                <input class="red-input" type="text" id="usernameInput" required minlength="3" maxlength="15" value="robooot">
+
+<!--                <label for="locationInput">Location</label>-->
+<!--                <input class="red-input" type="text" id="locationInput" required minlength="3" maxlength="15" value="Horodotska St">-->
+
+                <div class="radio-title">Role</div>
+                <div class="signup-form-radio">
+                    <label for="userChoice">Regular</label>
+                    <input type="radio" id="userChoice" name="roleInput" value="regular" checked>
+
+                    <label for="adminChoice">Admin</label>
+                    <input type="radio" id="adminChoice" name="roleInput" value="admin">
+                </div>
+
+                <label for="password">Password</label>
+                <input class="red-input" type="password" id="password" required minlength="5" maxlength="14" value="Taras332">
+
+                <label for="confirm_password">Confirm password</label>
+                <input class="red-input" type="password" id="confirm_password" required value="Taras332">
 
                 <div class="login-button-container"> <!-- to center the button -->
                     <button class="login-form-button" type="submit">Submit</button>
                 </div>
-                <div class="link1-txt">
-                    Already have an account? <a style="font-weight: 700;" href="login.html">Log in</a>
-                </div>
             </form>
+            <script>
+                var logregForm = document.getElementById('signup-form');
+                logregForm.onsubmit = function (event) {
+                    event.preventDefault();
+
+                    var request = new XMLHttpRequest(); // xhr
+
+                    var firstName = encodeURIComponent(document.getElementById("firstnameInput").value);
+                    var lastName = encodeURIComponent(document.getElementById("lastnameInput").value);
+                    var email = encodeURIComponent(document.getElementById("emailInput").value);
+                    var username = encodeURIComponent(document.getElementById("usernameInput").value);
+                    var password = encodeURIComponent(document.getElementById("password").value);
+
+                    var radios = document.getElementsByName("roleInput");
+                    for (let i = 0, length = radios.length; i < length; ++i) {
+                        if (radios[i].checked) {
+                            // alert(radios[i].value);
+                            var userRole = radios[i].value;
+
+                            // якщо знайшли обране - виходимо з циклу
+                            break;
+                        }
+                    }
+
+                    console.log(firstName);
+
+                    request.open("POST", "https://flask-lpnu.herokuapp.com/user/", /* async = */ false);
+
+                    request.setRequestHeader('Content-Type', 'application/json');
+                    request.send(JSON.stringify({
+                        "firstname": firstName,
+                        "lastname": lastName,
+                        "email": email,
+                        "username": username,
+                        "role": userRole,
+                        "password": password
+                    }));
+
+                    // var formData = new FormData(document.getElementById('signup-form'));
+                    // request.send(formData);
+
+
+                    console.log(request.response);
+                }
+            </script>
         </div>
     </div>
 </div>

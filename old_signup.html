@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Antise | Sign up</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="sass/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--    <script type="text/javascript" src="js/validators.js"></script>-->
+    <script type="text/javascript" src="js/signup.js"></script>
+</head>
+<body>
+<div class="content-container">
+    <div class="heading">Antise</div>
+    <div class="form-container">
+        <div class="left-part"><img src="../img/8244.jpg" alt="Logreg image"></div>
+        <div class="right-part">
+            <form id="f_id" class="logreg-form" action="">
+                <div class="title">Sign up</div>
+                <input class="red-input" type="text" id="firstnameInput"
+                       placeholder="First name" required minlength="3" maxlength="14" value="taras1">
+                <input class="red-input" type="text" id="lastnameInput"
+                       placeholder="Last name" required minlength="3" maxlength="14" value="taras1">
+                <input class="red-input" type="text" id="emailInput"
+                       placeholder="Email" required minlength="5" maxlength="14" value="taras1@gmail.com">
+                <input class="red-input" type="text" id="usernameInput"
+                       placeholder="Username" required minlength="5" maxlength="14" value="taras1_bmx">
+                <input type="password" placeholder="Password" id="password" required minlength="5" maxlength="14" value="tarastaras">
+                <input type="password" placeholder="Confirm password" id="confirm_password" required value="tarastaras">
+
+                <div class="login-button-container"> <!-- to center the button -->
+                    <button class="login-form-button" type="submit">Submit</button>
+                </div>
+                <div class="link1-txt">
+                    Already have an account? <a style="font-weight: 700;" href="login.html">Log in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

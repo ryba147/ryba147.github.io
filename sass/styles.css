@@ -61,6 +61,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+  margin-bottom: 15px;
   width: 100%;
   height: 50px;
   border-radius: 3px;
@@ -78,7 +79,7 @@ button:hover {
   cursor: pointer;
 }
 
-input {
+.logreg-form input {
   width: 100%;
   height: 50px;
   padding: 0 20px;
@@ -90,13 +91,24 @@ input {
   border: 1px solid #333333;
   border-radius: 5px;
 }
-
-input::-webkit-input-placeholder {
+.logreg-form label {
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+.logreg-form input::-webkit-input-placeholder {
   color: #666666;
 }
-
-.red-input:focus {
+.logreg-form .red-input:focus {
   border: 2px solid #FF6C73;
+}
+
+.signup-form-radio input {
+  height: 15px;
+  margin: 17px;
+}
+.signup-form-radio label {
+  padding: 15px;
 }
 
 /* contains all the CSS that handles the layout, such as the container and any grid systems */
@@ -129,6 +141,7 @@ input::-webkit-input-placeholder {
   height: 550px;
   object-fit: cover;
   position: relative;
+  margin-top: 10%;
 }
 @media (max-width: 992px) {
   .form-container .left-part img {
@@ -205,22 +218,21 @@ input::-webkit-input-placeholder {
     width: 90%;
   }
 }
-.form-container .signup-form {
-  box-sizing: border-box;
+.form-container .logreg-form {
   width: 50%;
   display: flex;
   flex-wrap: wrap;
   padding: 20px 65px 0 55px;
 }
 @media (max-width: 992px) {
-  .form-container .signup-form {
+  .form-container .logreg-form {
     width: 60%;
     padding-left: 45px;
     padding-right: 45px;
   }
 }
 @media (max-width: 768px) {
-  .form-container .signup-form {
+  .form-container .logreg-form {
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
@@ -236,6 +248,22 @@ input::-webkit-input-placeholder {
 }
 .form-container .link1-txt {
   padding-top: 15px;
+}
+
+.signup-form-radio {
+  width: 100%;
+  font-family: "Dosis", sans-serif;
+  display: flex;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.radio-title {
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
+  width: 100%;
+  padding-bottom: 8px;
 }
 
 /*# sourceMappingURL=styles.css.map */

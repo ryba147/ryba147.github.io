@@ -1,22 +1,41 @@
-input {
-  width: 100%;
-  height: 50px;
-  padding: 0 20px;
-  margin-bottom: 16px;
+.logreg-form {
+  input {
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 16px;
 
-  font-size: 16px;
-  color: $soft-grey;
-  line-height: 1.2;
+    font-size: 16px;
+    color: $soft-grey;
+    line-height: 1.2;
 
-  outline: none;
-  border: 1px solid $soft-grey;
-  border-radius: 5px;
+    outline: none;
+    border: 1px solid $soft-grey;
+    border-radius: 5px;
+  }
+
+  label {
+    font-family: $base-font-family;
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
+
+  input::-webkit-input-placeholder {
+    color: $light-grey;
+  }
+
+  .red-input:focus {
+    border: 2px solid $salmon;
+  }
 }
 
-input::-webkit-input-placeholder {
-  color: $light-grey;
-}
+.signup-form-radio {
+  input {
+    height: 15px;
+    margin: 17px;
+  }
 
-.red-input:focus {
-  border: 2px solid $salmon;
+  label {
+    padding: 15px;
+  }
 }
