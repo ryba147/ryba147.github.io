@@ -1,25 +1,37 @@
-var url = "https://flask-lpnu.herokuapp.com/user/login/";
-var data = {username: "taras", password: "admin"};
-var datatype = 'jsonp';
+window.onload = function() {
+    var loginForm = document.getElementById("login-page-form");
 
-$(document).ready(function () {
-    $('form').on('submit', function (event) {
-        $.ajax({
-            data: {
-                username: $('#usernameInput').val(),
-                password: $('#passwordInput').val()
-            },
-            type: 'GET',
-            url: url,
-        }).done(function (data) {
-            if (data.error) {
-                alert("Denied");
-            }
-            else {
-                // alert("Approved");
-                location.href = "../index.html";
-            }
-        });
+    loginForm.onsubmit = function (event) {
+        const apiUrl = new URL("https://flask-lpnu.herokuapp.com/user/login/");
+        // const apiUrl = new URL("http://127.0.0.1:5000/user/login/");
+
         event.preventDefault();
-    });
-});
+
+        var request = new XMLHttpRequest();
+
+        const username = encodeURIComponent(document.getElementById("usernameInput").value);
+        const password = encodeURIComponent(document.getElementById("passwordInput").value);
+
+        apiUrl.searchParams.append("username", username);
+        apiUrl.searchParams.append("password", password);
+
+        request.open("GET", apiUrl.toString(), false);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send();
+
+        console.log(request.response);
+        console.log(request.status);
+
+        if (request.status === 200) {
+            alert("Login success");
+            location.href = "/";
+        }
+        else if (request.status === 404) {
+            alert("Invalid username or password");
+        }
+        else  {
+            alert("An unexpected error occurred");
+        }
+
+    }
+}
