@@ -1,9 +1,9 @@
 .form-container {
-  .login-form {
+  .login-reg-form {
     width: 50%;
     display: flex;
     flex-wrap: wrap;
-    padding: 20px 65px 0 55px;
+    padding: 59px 65px 59px 55px;
 
     @media (max-width: 992px) {
       width: 60%;
@@ -19,7 +19,8 @@
   }
 
   .left-part #signup-image {
-    margin-top: 122px;
+    margin-top: 192px;
+    margin-bottom: 192px;
   }
 
   .link-txt {

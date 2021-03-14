@@ -40,12 +40,11 @@
     }
   }
 
-  .login-form {
+  .login-reg-form {
     box-sizing: border-box;
     width: 50%;
     display: flex;
     flex-wrap: wrap;
-    padding: 110px 65px 0 55px;
 
     @media (max-width: 992px) {
       width: 60%;
@@ -82,7 +81,6 @@
 
   .link1-txt {
     @extend .link-txt;
-    padding-bottom: 25px;
     padding-top: 15px;
   }
 
