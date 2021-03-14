@@ -7,21 +7,23 @@ $normal: 400;
 $semibold: 500;
 $bold: 700;
 
-a {
-  color: $primary-color;
-  transition: $transition-default;
-  text-decoration: none;
+
+.link1-txt, .link2-txt {
+  a {
+    transition: $transition-default;
+    text-decoration: none;
+
+    &:visited {
+      color: $primary-color;
+    }
+
+    &:hover {
+      color: $footer-blue;
+      cursor: pointer;
+    }
+  }
 }
 
-a:focus {
-  outline: none !important;
-}
-
-a:visited {
-  color: $primary-color;
-}
-
-a:hover {
-  color: $dark-blue;
-  cursor: pointer;
+.link2-txt a {
+  font-weight: $bold;
 }

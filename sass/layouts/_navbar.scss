@@ -1,0 +1,52 @@
+.nav-bar {
+  text-align: left;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
+  width: 100%;
+
+  overflow: hidden;
+
+  background-color: $salmon;
+  box-shadow: $shadow-default;
+}
+
+.nav-bar a {
+  color: $white;
+  font-size: 16px;
+  text-transform: uppercase;
+  /* letter-spacing: 5px; */ /*COMPRESSOR*/
+
+  display: inline-block;
+  text-decoration: none;
+
+  /*float: left;*/
+  /*padding: 40px 40px 40px 40px;*/
+  padding: 35px;
+}
+
+.nav-bar a:last-child {
+  float: right; /* only contact us button has a float*/
+}
+
+.nav-bar a:hover {
+  transition: 0.8s;
+  /*background-color: black;*/
+  color: black;
+}
+
+@media screen and (max-width: 700px) {
+  .nav-bar {
+    text-align: center;
+    /*position: static;*/
+  }
+
+  .nav-bar a {
+    display: block;
+    padding: 15px; /*  !!!!!!  */
+  }
+
+  .nav-bar a:last-child {
+    float: none;
+  }
+}

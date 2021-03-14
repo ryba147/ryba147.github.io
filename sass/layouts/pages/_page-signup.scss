@@ -18,11 +18,13 @@
     }
   }
 
+  .left-part #signup-image {
+    margin-top: 12%;
+  }
+
   .link-txt {
     width: 100%;
-    color: $primary-color;
     font-size: 14px;
-    font-family: $base-font-family;
     font-weight: $normal;
     text-transform: uppercase;
   }
@@ -36,7 +38,6 @@
 .signup-form-radio {
   width: 100%;
 
-  font-family: $base-font-family;
   display: flex;
   border: 1px solid;
   border-radius: 5px;
@@ -44,7 +45,6 @@
 }
 
 .radio-title {
-  font-family: $base-font-family;
   font-size: 16px;
   width: 100%;
   padding-bottom: 8px;

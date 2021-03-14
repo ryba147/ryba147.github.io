@@ -1,23 +1,20 @@
 /* The style file should be the only Sass file from the whole code base not to begin with an underscore.
 This file should not contain anything but @import and comments. */
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap");
-a {
-  color: #0e1111;
+.link1-txt a, .link2-txt a {
   transition: all 0.4s;
   text-decoration: none;
 }
-
-a:focus {
-  outline: none !important;
-}
-
-a:visited {
+.link1-txt a:visited, .link2-txt a:visited {
   color: #0e1111;
 }
-
-a:hover {
-  color: #004F6D;
+.link1-txt a:hover, .link2-txt a:hover {
+  color: #384955;
   cursor: pointer;
+}
+
+.link2-txt a {
+  font-weight: 700;
 }
 
 /* contained within this file are all your resets, variables, mixins, and any utility classes */
@@ -32,6 +29,10 @@ body {
 
 ol, ul {
   list-style: none;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
 }
 
 /* anything reusable such as buttons, navbars, cards etc. */
@@ -92,7 +93,6 @@ button:hover {
   border-radius: 5px;
 }
 .login-form label {
-  font-family: "Dosis", sans-serif;
   font-size: 16px;
   padding-bottom: 8px;
 }
@@ -112,13 +112,73 @@ button:hover {
 }
 
 /* contains all the CSS that handles the layout, such as the container and any grid systems */
+.nav-bar {
+  text-align: left;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  /* required */
+  width: 100%;
+  overflow: hidden;
+  background-color: #FF6C73;
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+}
+
+.nav-bar a {
+  color: #FFFFFF;
+  font-size: 16px;
+  text-transform: uppercase;
+  /* letter-spacing: 5px; */
+  /*COMPRESSOR*/
+  display: inline-block;
+  text-decoration: none;
+  /*float: left;*/
+  /*padding: 40px 40px 40px 40px;*/
+  padding: 35px;
+}
+
+.nav-bar a:last-child {
+  float: right;
+  /* only contact us button has a float*/
+}
+
+.nav-bar a:hover {
+  transition: 0.8s;
+  /*background-color: black;*/
+  color: black;
+}
+
+@media screen and (max-width: 700px) {
+  .nav-bar {
+    text-align: center;
+    /*position: static;*/
+  }
+
+  .nav-bar a {
+    display: block;
+    padding: 15px;
+    /*  !!!!!!  */
+  }
+
+  .nav-bar a:last-child {
+    float: none;
+  }
+}
+.footer {
+  font-size: 14px;
+  width: 100%;
+  height: 140px;
+  position: relative;
+  display: block;
+  background-color: #384955;
+}
+
 .content-container {
   padding-bottom: 14px;
 }
 
 .heading {
   color: #0e1111;
-  font-family: "Dosis", sans-serif;
   font-weight: 700;
   font-size: 72px;
   text-align: center;
@@ -141,7 +201,6 @@ button:hover {
   height: 550px;
   object-fit: cover;
   position: relative;
-  margin-top: 10%;
 }
 @media (max-width: 992px) {
   .form-container .left-part img {
@@ -176,7 +235,6 @@ button:hover {
   }
 }
 .form-container .title {
-  font-family: "Dosis", sans-serif;
   font-size: 20px;
   font-weight: 500;
   color: #0e1111;
@@ -190,7 +248,6 @@ button:hover {
   width: 100%;
   color: #0e1111;
   font-size: 14px;
-  font-family: "Dosis", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -238,11 +295,12 @@ button:hover {
     padding-right: 15px;
   }
 }
+.form-container .left-part #signup-image {
+  margin-top: 12%;
+}
 .form-container .link-txt, .form-container .link1-txt, .form-container .link2-txt {
   width: 100%;
-  color: #0e1111;
   font-size: 14px;
-  font-family: "Dosis", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -252,7 +310,6 @@ button:hover {
 
 .signup-form-radio {
   width: 100%;
-  font-family: "Dosis", sans-serif;
   display: flex;
   border: 1px solid;
   border-radius: 5px;
@@ -260,10 +317,26 @@ button:hover {
 }
 
 .radio-title {
-  font-family: "Dosis", sans-serif;
   font-size: 16px;
   width: 100%;
   padding-bottom: 8px;
+}
+
+.content {
+  background-color: #ffffff;
+  color: #0e1111;
+  font-size: 16px;
+  padding: 20px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #FFFFFF;
+  overflow: hidden;
+  /*text-align: center;*/
 }
 
 /*# sourceMappingURL=styles.css.map */

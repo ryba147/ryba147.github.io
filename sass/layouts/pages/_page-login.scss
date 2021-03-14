@@ -4,7 +4,6 @@
 
 .heading {
   color: $primary-color;
-  font-family: $base-font-family;
   font-weight: $bold;
   font-size: 72px;
   text-align: center;
@@ -30,7 +29,6 @@
     height: 550px;
     object-fit: cover;
     position: relative;
-    margin-top: 10%;
 
     @media (max-width: 992px) {
       width: 40%;
@@ -63,7 +61,6 @@
   }
 
   .title {
-    font-family: $base-font-family;
     font-size: 20px;
     font-weight: $semibold;
     color: $primary-color;
@@ -79,7 +76,6 @@
     width: 100%;
     color: $primary-color;
     font-size: 14px;
-    font-family: $base-font-family;
     font-weight: $normal;
     text-transform: uppercase;
   }
