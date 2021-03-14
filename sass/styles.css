@@ -296,7 +296,7 @@ button:hover {
   }
 }
 .form-container .left-part #signup-image {
-  margin-top: 12%;
+  margin-top: calc(50% - 550px);
 }
 .form-container .link-txt, .form-container .link1-txt, .form-container .link2-txt {
   width: 100%;
