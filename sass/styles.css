@@ -163,6 +163,14 @@ button:hover {
   background-color: #384955;
 }
 
+.social-media-icons-container {
+  display: flex;
+  align-items: center;
+}
+.social-media-icons-container .ico {
+  width: 15px;
+}
+
 .content-container {
   padding-bottom: 14px;
 }

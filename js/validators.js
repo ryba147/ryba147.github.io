@@ -1,4 +1,4 @@
-window.onload = function () {
+window.addEventListener('load', function() {
     var password = document.getElementById("password");
     var confirmPassword = document.getElementById("confirm_password");
 
@@ -11,4 +11,4 @@ window.onload = function () {
             confirmPassword.setCustomValidity("Password does not match.");
         }
     }
-}
+});
