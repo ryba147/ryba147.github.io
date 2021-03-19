@@ -1,22 +1,89 @@
 .footer {
-  font-size: 14px;
+  background-color: $space-grey;
   width: 100%;
-  height: 140px;
+  text-align: left;
+  padding: 45px 50px;
+  color: $white;
 
-  position: relative;
-  display: block;
-  background-color: rgb(56, 73, 85, 100);
-}
-
-
-
-  .social-media-icons-container {
-    display: flex;
-    align-items: center;
-    //justify-content: space-between;
-    .ico {
-      width: 15px;
-
+  .footer-left p {
+    font-size: 14px;
+    margin: 0;
   }
 
+  .copyright {
+    font-size: 14px;
+  }
+
+  .footer-links {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    transition: $transition-025;
+
+    a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+      transition: $transition-025;
+    }
+
+    a:hover {
+      color: $red;
+    }
+  }
+
+  .footer-links {
+    a::before {
+      content: "❘";
+      font-size: 20px;
+      left: 0;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .link-1::before {
+      content: none;
+    }
+  }
+
+  .footer-right-social {
+    float: right;
+    margin-top: 6px;
+    max-width: 160px;
+
+    a {
+      background-color: $white;
+
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      border-radius: 8px;
+
+      text-align: center;
+      line-height: 35px;
+      margin-left: 3px;
+      transition: $transition-025;
+
+      img {
+        width: 35px;
+        height: 35px;
+        object-fit: cover;
+      }
+
+      &:hover {
+        transform: $scale-110;
+        -webkit-transform: $scale-110;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      .footer-right-social {
+        float: none;
+        margin: 0 auto 20px;
+      }
+    }
+  }
 }

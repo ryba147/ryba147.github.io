@@ -1,12 +1,11 @@
+@charset "UTF-8";
 /* The style file should be the only Sass file from the whole code base not to begin with an underscore.
 This file should not contain anything but @import and comments. */
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap");
 .link1-txt a, .link2-txt a {
+  color: #0e1111;
   transition: all 0.4s;
   text-decoration: none;
-}
-.link1-txt a:visited, .link2-txt a:visited {
-  color: #0e1111;
 }
 .link1-txt a:hover, .link2-txt a:hover {
   color: #384955;
@@ -31,7 +30,7 @@ ol, ul {
   list-style: none;
 }
 
-body {
+* {
   font-family: "Dosis", sans-serif;
 }
 
@@ -155,20 +154,75 @@ button:hover {
   }
 }
 .footer {
-  font-size: 14px;
+  background-color: #33383c;
   width: 100%;
-  height: 140px;
-  position: relative;
-  display: block;
-  background-color: #384955;
+  text-align: left;
+  padding: 45px 50px;
+  color: #FFFFFF;
 }
-
-.social-media-icons-container {
-  display: flex;
-  align-items: center;
+.footer .footer-left p {
+  font-size: 14px;
+  margin: 0;
 }
-.social-media-icons-container .ico {
-  width: 15px;
+.footer .copyright {
+  font-size: 14px;
+}
+.footer .footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px;
+  transition: all 0.25s;
+}
+.footer .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s;
+}
+.footer .footer-links a:hover {
+  color: #C90032;
+}
+.footer .footer-links a::before {
+  content: "❘";
+  font-size: 20px;
+  left: 0;
+  display: inline-block;
+  padding-right: 5px;
+}
+.footer .footer-links .link-1::before {
+  content: none;
+}
+.footer .footer-right-social {
+  float: right;
+  margin-top: 6px;
+  max-width: 160px;
+}
+.footer .footer-right-social a {
+  background-color: #FFFFFF;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px;
+  transition: all 0.25s;
+}
+.footer .footer-right-social a img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+.footer .footer-right-social a:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .footer .footer .footer-right-social {
+    float: none;
+    margin: 0 auto 20px;
+  }
 }
 
 .content-container {

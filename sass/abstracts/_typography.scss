@@ -10,12 +10,11 @@ $bold: 700;
 
 .link1-txt, .link2-txt {
   a {
-    transition: $transition-default;
+    color: $primary-color;
+    transition: $transition-04;
     text-decoration: none;
 
-    &:visited {
-      color: $primary-color;
-    }
+    &:visited { }
 
     &:hover {
       color: $footer-blue;
