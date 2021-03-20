@@ -23,16 +23,8 @@
     margin-bottom: 192px;
   }
 
-  .link-txt {
-    width: 100%;
-    font-size: 14px;
-    font-weight: $normal;
-    text-transform: uppercase;
-  }
-
   .link1-txt {
-    @extend .link-txt;
-    padding-top: 15px;
+    @include logreg-page-link($p-top:15px);
   }
 }
 

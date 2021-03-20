@@ -16,15 +16,14 @@ button:hover {
 }
 
 .login-form-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include border-radius(3px);
+  @include transition($transition-04);
+  @include center();
 
   padding: 0 20px;
   margin-bottom: 15px;
   width: 100%;
   height: 50px;
-  border-radius: 3px;
   background: $salmon;
 
   font-size: 12px;
@@ -32,7 +31,6 @@ button:hover {
   color: $white;
   text-transform: uppercase;
   letter-spacing: .5px;
-  transition: $transition-04;
 }
 
 .login-form-button:hover {

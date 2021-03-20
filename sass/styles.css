@@ -2,20 +2,6 @@
 /* The style file should be the only Sass file from the whole code base not to begin with an underscore.
 This file should not contain anything but @import and comments. */
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap");
-.link1-txt a, .link2-txt a {
-  color: #0e1111;
-  transition: all 0.4s;
-  text-decoration: none;
-}
-.link1-txt a:hover, .link2-txt a:hover {
-  color: #384955;
-  cursor: pointer;
-}
-
-.link2-txt a {
-  font-weight: 700;
-}
-
 /* contained within this file are all your resets, variables, mixins, and any utility classes */
 * {
   box-sizing: border-box;
@@ -57,6 +43,12 @@ button:hover {
 }
 
 .login-form-button {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,14 +56,12 @@ button:hover {
   margin-bottom: 15px;
   width: 100%;
   height: 50px;
-  border-radius: 3px;
   background: #FF6C73;
   font-size: 12px;
   font-weight: 700;
   color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: all 0.4s;
 }
 
 .login-form-button:hover {
@@ -80,6 +70,9 @@ button:hover {
 }
 
 .login-reg-form input {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   width: 100%;
   height: 50px;
   padding: 0 20px;
@@ -89,7 +82,6 @@ button:hover {
   line-height: 1.2;
   outline: none;
   border: 1px solid #333333;
-  border-radius: 5px;
 }
 .login-reg-form label {
   font-size: 16px;
@@ -112,6 +104,9 @@ button:hover {
 
 /* contains all the CSS that handles the layout, such as the container and any grid systems */
 .nav-bar {
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
   z-index: 1;
   text-align: left;
   position: sticky;
@@ -121,7 +116,6 @@ button:hover {
   width: 100%;
   overflow: hidden;
   background-color: #FF6C73;
-  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
 }
 .nav-bar a {
   color: #FFFFFF;
@@ -137,7 +131,9 @@ button:hover {
   /* only contact us button has a float*/
 }
 .nav-bar a:hover {
-  transition: 0.8s;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
   color: #0e1111;
 }
 
@@ -160,7 +156,7 @@ button:hover {
   padding: 45px 50px;
   color: #FFFFFF;
 }
-.footer .footer-left p {
+.footer .footer-left {
   font-size: 14px;
   margin: 0;
 }
@@ -168,17 +164,18 @@ button:hover {
   font-size: 14px;
 }
 .footer .footer-links {
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
   font-size: 18px;
   font-weight: 700;
   margin: 0 0 10px;
-  transition: all 0.25s;
 }
 .footer .footer-links a {
   color: #FFFFFF;
   display: inline-block;
   line-height: 1.8;
   text-decoration: none;
-  transition: all 0.25s;
 }
 .footer .footer-links a:hover {
   color: #C90032;
@@ -200,15 +197,19 @@ button:hover {
   max-width: 160px;
 }
 .footer .footer-right-social a {
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
   background-color: #FFFFFF;
   display: inline-block;
   width: 35px;
   height: 35px;
-  border-radius: 8px;
   text-align: center;
   line-height: 35px;
   margin-left: 3px;
-  transition: all 0.25s;
 }
 .footer .footer-right-social a img {
   width: 35px;
@@ -238,12 +239,16 @@ button:hover {
 }
 
 .form-container {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
   background-color: #FFFFFF;
   width: 70%;
   height: max-content;
   margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
   overflow: hidden;
 }
 
@@ -295,20 +300,43 @@ button:hover {
   width: 100%;
   display: block;
 }
-.form-container .link-txt, .form-container .link2-txt, .form-container .link1-txt {
-  width: 100%;
-  color: #0e1111;
-  font-size: 14px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
 .form-container .link1-txt {
+  width: 100%;
+  font-size: 14px;
+  text-transform: uppercase;
   padding-top: 15px;
+  padding-bottom: 0;
+}
+.form-container .link1-txt a {
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  font-weight: 400;
+  color: #0e1111;
+  text-decoration: none;
+}
+.form-container .link1-txt a:hover {
+  color: #C90032;
+  cursor: pointer;
 }
 .form-container .link2-txt {
+  width: 100%;
+  font-size: 14px;
+  text-transform: uppercase;
   padding-top: 70px;
-  font-size: 16px;
-  font-weight: 500;
+  padding-bottom: 0px;
+}
+.form-container .link2-txt a {
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  font-weight: 700;
+  color: #0e1111;
+  text-decoration: none;
+}
+.form-container .link2-txt a:hover {
+  color: #C90032;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -349,14 +377,24 @@ button:hover {
   margin-top: 192px;
   margin-bottom: 192px;
 }
-.form-container .link-txt, .form-container .link1-txt, .form-container .link2-txt {
+.form-container .link1-txt {
   width: 100%;
   font-size: 14px;
-  font-weight: 400;
   text-transform: uppercase;
-}
-.form-container .link1-txt {
   padding-top: 15px;
+  padding-bottom: 0;
+}
+.form-container .link1-txt a {
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  font-weight: 400;
+  color: #0e1111;
+  text-decoration: none;
+}
+.form-container .link1-txt a:hover {
+  color: #C90032;
+  cursor: pointer;
 }
 
 .signup-form-radio {
@@ -387,22 +425,27 @@ button:hover {
 }
 
 .ann-container {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   width: 348px;
   display: inline-block;
   min-height: 440px;
   background: #FFF3F2;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
   margin: 15px;
   vertical-align: top;
   position: relative;
   overflow: hidden;
 }
 .ann-container img {
-  /* width: 90%; */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   /* top right bot left */
   margin: 14px 18px 0;
-  border-radius: 5px;
   width: calc(100% - 36px);
   height: 210px;
   object-fit: cover;

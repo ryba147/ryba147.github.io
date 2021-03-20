@@ -5,7 +5,7 @@
   padding: 45px 50px;
   color: $white;
 
-  .footer-left p {
+  .footer-left {
     font-size: 14px;
     margin: 0;
   }
@@ -15,32 +15,29 @@
   }
 
   .footer-links {
+    @include transition($transition-025);
     font-size: 18px;
     font-weight: $bold;
     margin: 0 0 10px;
-    transition: $transition-025;
 
     a {
       color: $white;
       display: inline-block;
       line-height: 1.8;
       text-decoration: none;
-      transition: $transition-025;
 
       &:hover {
         color: $red;
       }
-    }
-  }
 
-  .footer-links {
-    a:before {
-      content: "❘";
-      font-size: 20px;
-      color: $white;
-      left: 0;
-      display: inline-block;
-      padding-right: 5px;
+      &:before {
+        content: "❘";
+        font-size: 20px;
+        color: $white;
+        left: 0;
+        display: inline-block;
+        padding-right: 5px;
+      }
     }
 
     .link-1:before {
@@ -54,17 +51,16 @@
     max-width: 160px;
 
     a {
+      @include border-radius(8px);
+      @include transition($transition-025);
       background-color: $white;
-
       display: inline-block;
       width: 35px;
       height: 35px;
-      border-radius: 8px;
 
       text-align: center;
       line-height: 35px;
       margin-left: 3px;
-      transition: $transition-025;
 
       img {
         width: 35px;

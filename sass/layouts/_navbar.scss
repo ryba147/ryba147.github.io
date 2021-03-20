@@ -1,15 +1,15 @@
 .nav-bar {
+  @include box-shadow();
+
   z-index: 1;
   text-align: left;
   position: sticky;
   position: -webkit-sticky;
   top: 0; /* required */
   width: 100%;
-
   overflow: hidden;
 
   background-color: $salmon;
-  box-shadow: $shadow-default;
 
   a {
     color: $white;
@@ -27,7 +27,7 @@
     }
 
     &:hover {
-      transition: 0.8s;
+      @include transition($transition-04);
       color: $primary-color;
     }
   }

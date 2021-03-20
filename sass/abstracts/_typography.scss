@@ -6,23 +6,3 @@ $light: 300;
 $normal: 400;
 $semibold: 500;
 $bold: 700;
-
-
-.link1-txt, .link2-txt {
-  a {
-    color: $primary-color;
-    transition: $transition-04;
-    text-decoration: none;
-
-    &:visited { }
-
-    &:hover {
-      color: $footer-blue;
-      cursor: pointer;
-    }
-  }
-}
-
-.link2-txt a {
-  font-weight: $bold;
-}

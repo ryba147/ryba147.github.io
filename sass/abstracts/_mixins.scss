@@ -1,0 +1,47 @@
+@mixin logreg-page-link($f-size:14px, $f-weight:$normal, $p-top:0, $p-bot:0) {
+  width: 100%;
+  font-size: $f-size;
+  text-transform: uppercase;
+
+  padding-top: $p-top;
+  padding-bottom: $p-bot;
+
+  a {
+    @include transition($transition-04);
+    font-weight: $f-weight;
+    color: $primary-color;
+    text-decoration: none;
+
+    &:visited {
+    }
+
+    &:hover {
+      color: $red;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin box-shadow($shadow-type:$shadow-default) {
+  box-shadow: $shadow-type;
+  -webkit-box-shadow: $shadow-type;
+  -moz-box-shadow: $shadow-type;
+}
+
+@mixin transition($transtion-type) {
+  transition: $transtion-type;
+  -webkit-transition: $transtion-type;
+  -moz-transition: $transtion-type;
+}

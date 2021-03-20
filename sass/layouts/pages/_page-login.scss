@@ -11,14 +11,13 @@
 }
 
 .form-container {
+  @include border-radius(10px);
+  @include box-shadow();
+
   background-color: $white;
   width: 70%;
   height: max-content;
   margin: 0 auto;
-
-  border-radius: 10px;
-  //x y радіус розтяг колір
-  box-shadow: $shadow-default;
   overflow: hidden;
 }
 
@@ -71,24 +70,12 @@
     display: block;
   }
 
-  .link-txt {
-    width: 100%;
-    color: $primary-color;
-    font-size: 14px;
-    font-weight: $normal;
-    text-transform: uppercase;
-  }
-
   .link1-txt {
-    @extend .link-txt;
-    padding-top: 15px;
+    @include logreg-page-link(14px, $normal, 15px);
   }
 
   .link2-txt {
-    @extend .link-txt;
-    padding-top: 70px;
-    font-size: 16px;
-    font-weight: $semibold;
+    @include logreg-page-link(14px, $bold, 70px, 0px);
   }
 }
 
