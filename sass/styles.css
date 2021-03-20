@@ -186,6 +186,7 @@ button:hover {
 .footer .footer-links a:before {
   content: "❘";
   font-size: 20px;
+  color: #FFFFFF;
   left: 0;
   display: inline-block;
   padding-right: 5px;
