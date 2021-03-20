@@ -169,28 +169,28 @@ button:hover {
 }
 .footer .footer-links {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 700;
   margin: 0 0 10px;
   transition: all 0.25s;
 }
 .footer .footer-links a {
+  color: #FFFFFF;
   display: inline-block;
   line-height: 1.8;
   text-decoration: none;
-  color: inherit;
   transition: all 0.25s;
 }
 .footer .footer-links a:hover {
   color: #C90032;
 }
-.footer .footer-links a::before {
+.footer .footer-links a:before {
   content: "❘";
   font-size: 20px;
   left: 0;
   display: inline-block;
   padding-right: 5px;
 }
-.footer .footer-links .link-1::before {
+.footer .footer-links .link-1:before {
   content: none;
 }
 .footer .footer-right-social {

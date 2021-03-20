@@ -16,25 +16,25 @@
 
   .footer-links {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: $bold;
     margin: 0 0 10px;
     transition: $transition-025;
 
     a {
+      color: $white;
       display: inline-block;
       line-height: 1.8;
       text-decoration: none;
-      color: inherit;
       transition: $transition-025;
-    }
 
-    a:hover {
-      color: $red;
+      &:hover {
+        color: $red;
+      }
     }
   }
 
   .footer-links {
-    a::before {
+    a:before {
       content: "❘";
       font-size: 20px;
       left: 0;
@@ -42,7 +42,7 @@
       padding-right: 5px;
     }
 
-    .link-1::before {
+    .link-1:before {
       content: none;
     }
   }
