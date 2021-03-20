@@ -45,3 +45,8 @@
   -webkit-transition: $transtion-type;
   -moz-transition: $transtion-type;
 }
+
+@mixin transform($transform-type) {
+  transform: $scale-110;
+  -webkit-transform: $scale-110;
+}

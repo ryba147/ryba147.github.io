@@ -27,6 +27,7 @@
       text-decoration: none;
 
       &:hover {
+        @include transition($transition-04);
         color: $red;
       }
 
@@ -68,8 +69,7 @@
       }
 
       &:hover {
-        transform: $scale-110;
-        -webkit-transform: $scale-110;
+        @include transform($scale-110);
       }
     }
   }

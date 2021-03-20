@@ -103,7 +103,7 @@ button:hover {
 }
 
 /* contains all the CSS that handles the layout, such as the container and any grid systems */
-.nav-bar {
+.navbar {
   box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
@@ -117,35 +117,64 @@ button:hover {
   overflow: hidden;
   background-color: #FF6C73;
 }
-.nav-bar a {
+.navbar a {
   color: #FFFFFF;
   font-size: 16px;
   text-transform: uppercase;
   display: inline-block;
   text-decoration: none;
-  /*float: left;*/
   padding: 35px;
 }
-.nav-bar a:last-child {
+.navbar a:last-child {
   float: right;
   /* only contact us button has a float*/
+  padding: 15px;
 }
-.nav-bar a:hover {
+.navbar a:hover {
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   color: #0e1111;
 }
 
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+.profile-container img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+.profile-container #username {
+  margin-right: 15px;
+}
+
 @media screen and (max-width: 700px) {
-  .nav-bar {
+  .navbar {
     text-align: center;
   }
-  .nav-bar a {
+  .navbar .profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar .profile-container img {
+    display: none;
+    margin: 0;
+  }
+  .navbar .profile-container #username {
+    margin: 0;
+  }
+  .navbar a {
     display: block;
     padding: 15px;
   }
-  .nav-bar a:last-child {
+  .navbar a:last-child {
     float: none;
   }
 }
@@ -178,6 +207,9 @@ button:hover {
   text-decoration: none;
 }
 .footer .footer-links a:hover {
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
   color: #C90032;
 }
 .footer .footer-links a:before {
@@ -420,8 +452,9 @@ button:hover {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .ann-container {

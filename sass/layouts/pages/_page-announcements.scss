@@ -7,9 +7,8 @@
 }
 
 .container {
-  display: flex;
+  @include center();
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .ann-container {
