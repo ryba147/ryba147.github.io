@@ -17,7 +17,7 @@ $(document).ready(function () {
             }
             else {
                 // alert("Approved");
-                location.href = "../../index.html";
+                location.href = "../../logged.html";
             }
         });
         event.preventDefault();
