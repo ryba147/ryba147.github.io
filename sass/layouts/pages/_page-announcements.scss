@@ -1,6 +1,7 @@
 .container {
   @include center();
   flex-wrap: wrap;
+  padding: 20px;
 }
 
 .ann-container {
