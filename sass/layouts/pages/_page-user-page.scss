@@ -60,6 +60,12 @@
 }
 
 .statistics {
+  a {
+    &:hover {
+      opacity: .7;
+    }
+  }
+
   .statistics-col {
     width: 10rem;
     text-align: center;

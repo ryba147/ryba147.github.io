@@ -4,6 +4,7 @@ This file should not contain anything but @import and comments. */
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap");
 a {
   color: #0e1111;
+  text-decoration: none;
 }
 /* contained within this file are all your resets, variables, mixins, and any utility classes */
 * {
@@ -592,6 +593,9 @@ button:hover {
   font-size: 18px;
 }
 
+.statistics a:hover {
+  opacity: 0.7;
+}
 .statistics .statistics-col {
   width: 10rem;
   text-align: center;
