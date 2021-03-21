@@ -6,3 +6,10 @@ $light: 300;
 $normal: 400;
 $semibold: 500;
 $bold: 700;
+
+a {
+  color: $primary-color;
+
+  &:visited {
+  }
+}

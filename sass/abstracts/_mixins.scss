@@ -9,11 +9,7 @@
   a {
     @include transition($transition-04);
     font-weight: $f-weight;
-    color: $primary-color;
     text-decoration: none;
-
-    &:visited {
-    }
 
     &:hover {
       color: $red;

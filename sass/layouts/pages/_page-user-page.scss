@@ -11,6 +11,10 @@
   @include center;
 }
 
+.profile-container img {
+  margin-left: 10px;
+}
+
 #profile-photo {
   margin: 40px 0 40px 0;
 
@@ -24,15 +28,32 @@
 }
 
 .user-info {
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   flex-wrap: wrap;
+}
 
-  .info-ico {
-    height: 24px;
-    width: 24px;
-    margin-right: 10px;
-    vertical-align: middle;
+.info-ico {
+  height: 24px;
+  width: 24px;
+  margin: 0 10px 0 10px;
+  vertical-align: middle;
+}
+
+.edit {
+  font-size: 12px;
+  width: max-content;
+  margin: 0 auto 50px;
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .7;
   }
+}
+
+.logout-button {
+  @extend .edit;
+  font-size: 18px;
 }
 
 .statistics {
@@ -55,15 +76,15 @@
 }
 
 .caption {
+  margin-top: 30px;
   font-size: 30px;
   font-weight: $bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 30px;
   width: 100%;
 
   @media (max-width: 400px) {
-      font-size: 24px;
+    font-size: 24px;
   }
 
   @media (max-width: 320px) {
@@ -80,11 +101,21 @@
   .statistics {
     flex-wrap: wrap;
   }
+
+  #edit-button {
+    height: 24px;
+    width: 24px;
+  }
 }
 
 @media (max-width: 320px) {
   #profile-photo img {
     height: 8rem;
     width: 8rem;
+  }
+
+  #edit-button {
+    height: 18px;
+    width: 18px;
   }
 }
