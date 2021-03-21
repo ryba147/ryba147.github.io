@@ -4,10 +4,22 @@
   height: max-content;
   margin: 0 auto;
   overflow: hidden;
+
+  @media (max-width: 992px) {
+    width: 60%;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .file-upload {
-  @include border-radius(5px);
+  @include border-radius(15px);
   @include center();
   color: $primary-color;
 

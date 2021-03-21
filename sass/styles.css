@@ -451,17 +451,11 @@ button:hover {
   padding-bottom: 8px;
 }
 
-.content {
-  background-color: #FFFFFF;
-  color: #0e1111;
-  font-size: 16px;
-  padding: 20px;
-}
-
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   flex-wrap: wrap;
 }
 
@@ -541,7 +535,8 @@ button:hover {
 }
 
 #profile-photo, .statistics,
-.user-info, .caption {
+.user-info,
+.ann-info, .caption {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -564,11 +559,11 @@ button:hover {
   border: 8px solid #C90032;
 }
 
-.user-info {
+.user-info, .ann-info {
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  border: 1px solid #C90032;
+  border: 2px solid #C90032;
   padding: 35px;
   margin-bottom: 50px;
   flex-wrap: wrap;
@@ -697,6 +692,41 @@ button:hover {
   margin-bottom: 30px;
 }
 
+.ann-info {
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  margin: 3px;
+}
+.ann-info:hover {
+  cursor: pointer;
+  background-color: #FFF3F2;
+}
+
+.ann-photo {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  height: 65px;
+  width: 85px;
+  margin: 0 10px 0 10px;
+  vertical-align: middle;
+}
+
+.ann-name {
+  font-size: 28px;
+}
+
+.announcements-container {
+  padding: 20px;
+  height: calc(100vh - 153px - 120px - 121px - 38px);
+}
+
+.important-row {
+  font-weight: 700;
+}
+
 .announcement-creation-container {
   background-color: #FFFFFF;
   width: 70%;
@@ -704,11 +734,25 @@ button:hover {
   margin: 0 auto;
   overflow: hidden;
 }
+@media (max-width: 992px) {
+  .announcement-creation-container {
+    width: 60%;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+@media (max-width: 768px) {
+  .announcement-creation-container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 
 .file-upload {
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;

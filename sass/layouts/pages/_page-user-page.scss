@@ -29,7 +29,7 @@
 
 .user-info {
   @include border-radius(10px);
-  border: 1px solid $red;
+  border: 2px solid $red;
   padding: 35px;
   margin-bottom: 50px;
   flex-wrap: wrap;
