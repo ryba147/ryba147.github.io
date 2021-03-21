@@ -471,6 +471,7 @@ button:hover {
   min-height: 440px;
   background: #FFF3F2;
   margin: 15px;
+  padding: 20px;
   vertical-align: top;
   position: relative;
   overflow: hidden;
