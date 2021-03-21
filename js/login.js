@@ -24,7 +24,7 @@ window.onload = function() {
 
         if (request.status === 200) {
             alert("Login success");
-            location.href = "/";
+            location.href = "/logged.html";
         }
         else if (request.status === 404) {
             alert("Invalid username or password");
