@@ -39,14 +39,14 @@ button:hover {
   cursor: pointer;
 }
 
-.login-button-container {
+.submit-button-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.login-form-button {
+.submit-form-button {
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -68,7 +68,7 @@ button:hover {
   letter-spacing: 0.5px;
 }
 
-.login-form-button:hover {
+.submit-form-button:hover {
   background: #333333;
   cursor: pointer;
 }
@@ -86,6 +86,9 @@ button:hover {
   line-height: 1.2;
   outline: none;
   border: 1px solid #333333;
+}
+.login-reg-form #descriptionInput {
+  padding: 50px;
 }
 .login-reg-form label {
   font-size: 16px;
@@ -690,8 +693,42 @@ button:hover {
   color: #C90032;
 }
 
-.login-button-container {
+.submit-button-container {
   margin-bottom: 30px;
+}
+
+.announcement-creation-container {
+  background-color: #FFFFFF;
+  width: 70%;
+  height: max-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.file-upload {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0e1111;
+  width: max-content;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid #333333;
+  margin: 0 auto 30px;
+}
+.file-upload:hover {
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  background-color: #33383c;
+  color: #FFFFFF;
+}
+
+.file-upload input[type=file] {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

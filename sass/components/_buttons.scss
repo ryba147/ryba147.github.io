@@ -8,14 +8,14 @@ button:hover {
   cursor: pointer;
 }
 
-.login-button-container {
+.submit-button-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.login-form-button {
+.submit-form-button {
   @include border-radius(3px);
   @include transition($transition-04);
   @include center();
@@ -33,7 +33,7 @@ button:hover {
   letter-spacing: .5px;
 }
 
-.login-form-button:hover {
+.submit-form-button:hover {
   background: $soft-grey;
   cursor: pointer;
 }

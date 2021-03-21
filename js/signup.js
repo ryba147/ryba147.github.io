@@ -8,13 +8,13 @@ window.addEventListener('load', function() {
 
         var request = new XMLHttpRequest(); // xhr
 
-        var firstName = encodeURIComponent(document.getElementById("firstnameInput").value);
-        var lastName = encodeURIComponent(document.getElementById("lastnameInput").value);
-        var email = encodeURIComponent(document.getElementById("emailInput").value);
-        var username = encodeURIComponent(document.getElementById("usernameInput").value);
-        var password = encodeURIComponent(document.getElementById("password").value);
+        var firstName = encodeURIComponent(document.getElementById("firstname-input").value);
+        var lastName = encodeURIComponent(document.getElementById("lastname-input").value);
+        var email = encodeURIComponent(document.getElementById("email-input").value);
+        var username = encodeURIComponent(document.getElementById("username-input").value);
+        var password = encodeURIComponent(document.getElementById("password-input").value);
 
-        var radios = document.getElementsByName("roleInput");
+        var radios = document.getElementsByName("role-input");
         for (let i = 0, length = radios.length; i < length; ++i) {
             if (radios[i].checked) {
                 // alert(radios[i].value);

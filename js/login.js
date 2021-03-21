@@ -9,8 +9,8 @@ window.onload = function() {
 
         var request = new XMLHttpRequest();
 
-        const username = encodeURIComponent(document.getElementById("usernameInput").value);
-        const password = encodeURIComponent(document.getElementById("passwordInput").value);
+        const username = encodeURIComponent(document.getElementById("username-input").value);
+        const password = encodeURIComponent(document.getElementById("password-input").value);
 
         apiUrl.searchParams.append("username", username);
         apiUrl.searchParams.append("password", password);

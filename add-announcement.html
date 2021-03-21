@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add announcement | Antise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="sass/styles.css">
+</head>
+<body>
+<div class="header">
+    <div class="heading">Antise</div>
+</div>
+
+<div class="navbar">
+    <a href="logged.html">Main page</a>
+    <a href="user-page.html">
+        <div class="profile-container">
+            <span>Welcome, taras134</span>
+            <img src="img/car.jpg" alt="Profile photo">
+        </div>
+    </a>
+</div>
+
+<div class="caption">Add an announcement</div>
+
+<div class="content container">
+    <div class="announcement-creation-container">
+        <div class="right-part">
+            <form id="" class="login-reg-form">
+                <label for="nameInput">Name</label>
+                <input class="red-input" type="text" id="nameInput" required minlength="3" maxlength="24">
+
+                <label for="descriptionInput">Description</label>
+                <input class="red-input" type="text" id="descriptionInput" required minlength="3" maxlength="255">
+
+                <label for="datetime">Date</label>
+                <input id="datetime" type="datetime-local">
+
+                <label for="locationInput">Location</label>
+                <input class="red-input" type="text" id="locationInput" required minlength="3" maxlength="45">
+
+                <div class="radio-title">Type</div>
+                <div class="signup-form-radio">
+                    <label for="publicChoice">Public</label>
+                    <input type="radio" id="publicChoice" name="announcementTypeChoice" value="public" checked>
+
+                    <label for="localChoice">Local</label>
+                    <input type="radio" id="localChoice" name="announcementTypeChoice" value="local">
+                </div>
+
+                <label class="file-upload">
+                    <input type="file"/>
+                    Upload an image
+                </label>
+
+                <div class="submit-button-container">
+                    <button class="submit-form-button" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-right-social">
+        <a href="https://www.facebook.com/"><img src="img/footer/facebook.svg" alt=""></a>
+        <a href="https://www.instagram.com/"><img src="img/footer/instagram.svg" alt=""></a>
+    </div>
+    <div class="footer-left">
+        <div class="footer-links">
+            <a class="link-1" href="#">About</a>
+            <a href="#">Contact us</a>
+        </div>
+        <div class="copyright">Antise &copy; 2021</div>
+    </div>
+</footer>
+</body>
+</html>

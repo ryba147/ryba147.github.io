@@ -1,0 +1,32 @@
+.announcement-creation-container {
+  background-color: $white;
+  width: 70%;
+  height: max-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.file-upload {
+  @include border-radius(5px);
+  @include center();
+  color: $primary-color;
+
+  width: max-content;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid $soft-grey;
+
+  margin: 0 auto 30px;
+
+  &:hover {
+    @include transition($transition-04);
+    background-color: $space-grey;
+    color: $white;
+  }
+}
+
+.file-upload {
+  input[type="file"] {
+    display: none;
+  }
+}
