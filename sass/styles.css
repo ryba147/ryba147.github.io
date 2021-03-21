@@ -347,12 +347,15 @@ button:hover {
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
-  font-weight: 400;
+  font-weight: 700;
   text-decoration: none;
 }
 .form-container .link1-txt a:hover {
   color: #C90032;
   cursor: pointer;
+}
+.form-container .link1-txt #login-link {
+  font-weight: 700;
 }
 .form-container .link2-txt {
   width: 100%;

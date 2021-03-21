@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
     var password = document.getElementById("password");
-    var confirmPassword = document.getElementById("confirm_password");
+    var confirmPassword = document.getElementById("confirmPassword");
 
     password.onchange = ConfirmPassword;
     confirmPassword.onkeyup = ConfirmPassword;
