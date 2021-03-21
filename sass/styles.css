@@ -638,6 +638,10 @@ button:hover {
     flex-wrap: wrap;
   }
 
+  .user-info, .ann-info {
+    padding: 0;
+  }
+
   #edit-button {
     height: 24px;
     width: 24px;
