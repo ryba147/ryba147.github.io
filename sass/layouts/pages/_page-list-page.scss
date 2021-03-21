@@ -2,7 +2,7 @@
   @extend .user-info;
   @include box-shadow($shadow-default);
   width: 100%;
-  margin: 3px;
+  margin-bottom: 25px;
 
   &:hover {
     cursor: pointer;
@@ -20,11 +20,6 @@
 
 .ann-name {
   font-size: 28px;
-}
-
-.announcements-container {
-  padding: 20px;
-  height: calc(100vh - 153px - 120px - 121px - 38px);
 }
 
 .important-row {
