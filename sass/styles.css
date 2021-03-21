@@ -525,7 +525,7 @@ button:hover {
 }
 
 #profile-photo, .statistics,
-.user-info, .caption, .info-row {
+.user-info, .caption {
   display: flex;
   justify-content: center;
   align-items: center;
