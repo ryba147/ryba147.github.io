@@ -558,6 +558,11 @@ button:hover {
 }
 
 .user-info {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border: 1px solid #C90032;
+  padding: 35px;
   margin-bottom: 50px;
   flex-wrap: wrap;
 }
@@ -569,13 +574,13 @@ button:hover {
   vertical-align: middle;
 }
 
-.edit, .logout-button {
+.edit, .delete-account, .logout-button {
   font-size: 12px;
   width: max-content;
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
   text-decoration: underline;
 }
-.edit:hover, .logout-button:hover {
+.edit:hover, .delete-account:hover, .logout-button:hover {
   cursor: pointer;
   opacity: 0.7;
 }
@@ -643,6 +648,43 @@ button:hover {
     height: 18px;
     width: 18px;
   }
+}
+.info-editor-container {
+  background-color: #FFFFFF;
+  width: 50%;
+  height: max-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .info-editor-container {
+    width: 60%;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+}
+@media (max-width: 768px) {
+  .info-editor-container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.edit, .delete-account, .logout-button {
+  margin-top: 0;
+}
+
+.delete-account {
+  font-size: 18px;
+  font-weight: 700;
+}
+.delete-account a {
+  color: #C90032;
+}
+
+.login-button-container {
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */

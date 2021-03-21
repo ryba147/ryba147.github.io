@@ -28,6 +28,9 @@
 }
 
 .user-info {
+  @include border-radius(10px);
+  border: 1px solid $red;
+  padding: 35px;
   margin-bottom: 50px;
   flex-wrap: wrap;
 }
@@ -42,7 +45,7 @@
 .edit {
   font-size: 12px;
   width: max-content;
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
   text-decoration: underline;
 
   &:hover {

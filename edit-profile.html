@@ -2,9 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update info | Antise</title>
+    <title>Sign up | Antise</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="sass/styles.css">
+
+    <script src="js/signup.js"></script>
+    <script src="js/validators.js"></script>
 </head>
 <body>
 
+<div class="header">
+    <div class="heading">Antise</div>
+</div>
+
+<div class="navbar">
+    <a href="local-announcements.html">Local announcements</a>
+    <a href="user-page.html">
+        <div class="profile-container">
+            <span id="username">Welcome, username</span>
+            <img src="img/car.jpg" alt="Profile photo">
+        </div>
+    </a>
+</div>
+
+<div class="caption">Edit profile</div>
+
+<div class="content-container">
+    <div class="info-editor-container">
+        <form id="" class="login-reg-form">
+            <div id="profile-photo"><img src="img/car.jpg" alt="Profile photo"></div>
+            <div class="edit"><a href="#">Click to change photo</a></div>
+            <div class="delete-account"><a href="index.html">Delete an account</a></div>
+
+            <label for="firstnameInput">First name</label>
+            <input class="red-input" type="text" id="firstnameInput" required minlength="3" maxlength="16"
+                   value="Taras">
+            <label for="lastnameInput">Last name</label>
+            <input class="red-input" type="text" id="lastnameInput" required minlength="3" maxlength="16"
+                   value="Test">
+
+            <label for="emailInput">Email</label>
+            <input class="red-input" type="text" id="emailInput" required minlength="3" maxlength="45"
+                   value="test@gmail.com">
+
+            <label for="locationInput">Location</label>
+            <input class="red-input" type="text" id="locationInput" required minlength="3" maxlength="15"
+                   value="Lviv, Ukraine">
+
+            <div class="radio-title">Role</div>
+            <div class="signup-form-radio">
+                <label for="userChoice">Regular</label>
+                <input type="radio" id="userChoice" name="roleInput" value="regular" checked>
+
+                <label for="adminChoice">Admin</label>
+                <input type="radio" id="adminChoice" name="roleInput" value="admin">
+            </div>
+
+            <label for="password">Password</label>
+            <input class="red-input" type="password" id="password" required minlength="5" maxlength="14"
+                   value="Hello">
+
+            <label for="confirm_password">Confirm password</label>
+            <input class="red-input" type="password" id="confirm_password" required value="Hello">
+
+            <div class="login-button-container">
+                <button class="login-form-button" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-right-social">
+        <a href="https://www.facebook.com/"><img src="img/footer/facebook.svg" alt=""></a>
+        <a href="https://www.instagram.com/"><img src="img/footer/instagram.svg" alt=""></a>
+    </div>
+    <div class="footer-left">
+        <div class="footer-links">
+            <a class="link-1" href="#">About</a>
+            <a href="#">Contact us</a>
+        </div>
+        <div class="copyright">Antise &copy; 2021</div>
+    </div>
+</footer>
 </body>
 </html>
