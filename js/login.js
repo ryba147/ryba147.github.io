@@ -1,9 +1,9 @@
-window.onload = function() {
+window.addEventListener('load', function() {
     var loginForm = document.getElementById("login-page-form");
 
     loginForm.onsubmit = function (event) {
-        const apiUrl = new URL("https://flask-lpnu.herokuapp.com/user/login/");
-        // const apiUrl = new URL("http://127.0.0.1:5000/user/login/");
+        // const apiUrl = new URL("https://flask-lpnu.herokuapp.com/user/login/");
+        const apiUrl = new URL("http://127.0.0.1:5000/user/login");
 
         event.preventDefault();
 
@@ -24,7 +24,11 @@ window.onload = function() {
 
         if (request.status === 200) {
             alert("Login success");
-            location.href = "/logged.html";
+            localStorage
+            // localStorage.setItem("username", username);
+            // localStorage.setItem("password", password);
+            localStorage.setItem("user", request.response);
+            location.href = "logged.html";
         }
         else if (request.status === 404) {
             alert("Invalid username or password");
@@ -32,6 +36,5 @@ window.onload = function() {
         else  {
             alert("An unexpected error occurred");
         }
-
     }
-}
+});

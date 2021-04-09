@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
-    const apiUrl = "https://flask-lpnu.herokuapp.com/user/";
-    // const apiUrl = "http://127.0.0.1:5000/user/";
+    // const apiUrl = "https://flask-lpnu.herokuapp.com/user/";
+    const apiUrl = "http://127.0.0.1:5000/user/";
     var signupForm = document.getElementById("signup-form");
 
     signupForm.onsubmit = function (event) {
@@ -39,7 +39,7 @@ window.addEventListener('load', function() {
 
         if (request.status === 201) {
             alert("User created");
-            location.href = "/login.html";
+            location.href = "login.html";
         } else if (request.status === 403) {
             alert("User already exists");
             // location.href = "/login.html";
