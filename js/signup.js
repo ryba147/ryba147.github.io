@@ -17,8 +17,9 @@ window.addEventListener('load', () => {
         const password = encodeURIComponent(document.getElementById('password-input').value);
         const radios = document.getElementsByName('role-input');
 
-        let userRole = 'regular';
-        for (let i = 0, { length } = radios; i < length; i += 1) {
+        let userRole = null;
+        const radiosLen = radios.length;
+        for (let i = 0; i < radiosLen; i += 1) {
             if (radios[i].checked) {
                 userRole = radios[i].value;
                 break; // якщо знайшли обране - виходимо з циклу

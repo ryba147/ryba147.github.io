@@ -40,7 +40,7 @@
                 <input id="datetime" type="datetime-local">
 
                 <label for="locationInput">Location</label>
-                <input class="red-input" type="text" id="locationInput" required minlength="3" maxlength="45">
+                <input class="red-input" type="text" id="locationInput" required maxlength="45" value="1">
 
                 <div class="radio-title">Type</div>
                 <div class="signup-form-radio">
@@ -78,42 +78,40 @@
 </footer>
 </body>
 
-<!--<script>-->
-<!--    function addAnnouncement() {-->
-<!--        const reqURL = "http://127.0.0.1:5000/announcements";-->
+<script>
+    function addAnnouncement() {
+        const reqURL = `http://127.0.0.1:5000/announcements`;
 
-<!--        console.log("here");-->
+        console.log('here');
 
-<!--        var title = encodeURIComponent(document.getElementById("titleInput").value);-->
-<!--        var description = encodeURIComponent(document.getElementById("descriptionInput").value);-->
-<!--        var pubDate = Date.now();-->
+        const title = encodeURIComponent(document.getElementById('titleInput').value);
+        const description = encodeURIComponent(document.getElementById('descriptionInput').value);
+        const pubDate = Date.now();
+        const radios = document.getElementsByName('announcementTypeChoice');
 
+        const radiosLength = radios.length;
+        let announcementType = null;
+        for (let i = 0; i < radiosLength; i += 1) {
+            if (radios[i].checked) {
+                announcementType = radios[i].value;
+                break;
+            }
+        }
 
-<!--        var radios = document.getElementsByName("announcementTypeChoice");-->
-<!--        for (let i = 0, length = radios.length; i < length; ++i) {-->
-<!--            if (radios[i].checked) {-->
-<!--                // alert(radios[i].value);-->
-<!--                var announcementType = radios[i].value;-->
+        const authorId = JSON.parse(localStorage.getItem('userData')).id;
 
-<!--                break; // якщо знайшли обране - виходимо з циклу-->
-<!--            }-->
-<!--        }-->
-
-<!--        var author_id = JSON.parse(localStorage.getItem("user"))['id'];-->
-
-<!--        var request = new XMLHttpRequest();-->
-<!--        request.open("POST", reqURL, false);-->
-<!--        // request.setRequestHeader('Authorization', 'Basic ' + btoa(unescape(encodeURIComponent("admin" + ':' + "YOUR_PASSWORD"))))-->
-<!--        request.setRequestHeader('Authorization', 'Basic YWRtaW46YWRtaW4=')-->
-<!--        request.setRequestHeader('Content-Type', 'application/json');-->
-<!--        request.send(JSON.stringify({-->
-<!--            "author_id": author_id,-->
-<!--            "title": title,-->
-<!--            "description": description,-->
-<!--            "pub_date": pubDate,-->
-<!--            "type": announcementType-->
-<!--        }));-->
-<!--        console.log(request.response);-->
-<!--    }-->
-<!--</script>-->
+        const request = new XMLHttpRequest();
+        request.open('POST', reqURL, false);
+        request.setRequestHeader('Authorization', 'Basic ' + localStorage.getItem('basicAuthToken'));
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({
+            author_id: authorId,
+            title: title,
+            description: description,
+            pub_date: pubDate,
+            type: announcementType,
+        }));
+        console.log(request.response);
+    }
+</script>
 </html>

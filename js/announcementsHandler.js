@@ -1,4 +1,4 @@
-import {API_URL} from "./constants.js";
+import { API_URL } from "./constants.js";
 
 /*
 window.addEventListener('load', function () {
@@ -28,40 +28,38 @@ window.addEventListener('load', function () {
 });
 */
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     function addAnnouncement() {
-        const reqURL = "http://127.0.0.1:5000/announcements";
+        const reqURL = `${API_URL}/announcements`;
 
-        console.log("here");
+        console.log('here');
 
-        var title = encodeURIComponent(document.getElementById("titleInput").value);
-        var description = encodeURIComponent(document.getElementById("descriptionInput").value);
-        var pubDate = Date.now();
+        const title = encodeURIComponent(document.getElementById('titleInput').value);
+        const description = encodeURIComponent(document.getElementById('descriptionInput').value);
+        const pubDate = Date.now();
+        const radios = document.getElementsByName('announcementTypeChoice');
 
-
-        var radios = document.getElementsByName("announcementTypeChoice");
-        for (let i = 0, length = radios.length; i < length; ++i) {
+        const radiosLength = radios.length;
+        let announcementType = null;
+        for (let i = 0; i < radiosLength; i += 1) {
             if (radios[i].checked) {
-                // alert(radios[i].value);
-                var announcementType = radios[i].value;
-
-                break; // якщо знайшли обране - виходимо з циклу
+                announcementType = radios[i].value;
+                break;
             }
         }
 
-        var author_id = JSON.parse(localStorage.getItem("user"))['id'];
+        const authorId = JSON.parse(localStorage.getItem('userData')).id;
 
-        var request = new XMLHttpRequest();
-        request.open("POST", reqURL, false);
-        // request.setRequestHeader('Authorization', 'Basic ' + btoa(unescape(encodeURIComponent("admin" + ':' + "YOUR_PASSWORD"))))
-        request.setRequestHeader('Authorization', 'Basic YWRtaW46YWRtaW4=')
+        const request = new XMLHttpRequest();
+        request.open('POST', reqURL, false);
+        request.setRequestHeader('Authorization', 'Basic ' + localStorage.getItem('basicAuthToken'));
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({
-            "author_id": author_id,
-            "title": title,
-            "description": description,
-            "pub_date": pubDate,
-            "type": announcementType
+            author_id: authorId,
+            title: title,
+            description: description,
+            pub_date: pubDate,
+            type: announcementType,
         }));
         console.log(request.response);
     }
