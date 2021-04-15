@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
 
-    <script src="js/signup.js"></script>
+    <script type="module" src="js/constants.js"></script>
+    <script type="module" src="js/signup.js"></script>
     <script src="js/validators.js"></script>
 </head>
 <body>
@@ -20,19 +21,15 @@
                 <div class="title">Sign up</div>
 
                 <label for="firstname-input">First name</label>
-                <input class="red-input" type="text" id="firstname-input" required minlength="3" maxlength="16"
-                       value="Taras">
+                <input class="red-input" type="text" id="firstname-input" required minlength="3" maxlength="16">
                 <label for="lastname-input">Last name</label>
-                <input class="red-input" type="text" id="lastname-input" required minlength="3" maxlength="16"
-                       value="Test">
+                <input class="red-input" type="text" id="lastname-input" required minlength="3" maxlength="16">
 
                 <label for="email-input">Email</label>
-                <input class="red-input" type="text" id="email-input" required minlength="3" maxlength="45"
-                       value="test@gmail.com">
+                <input class="red-input" type="text" id="email-input" required minlength="3" maxlength="45">
 
                 <label for="username-input">Username</label>
-                <input class="red-input" type="text" id="username-input" required minlength="3" maxlength="15"
-                       value="taras134">
+                <input class="red-input" type="text" id="username-input" required minlength="3" maxlength="15">
 
                 <!--                <label for="locationInput">Location</label>-->
                 <!--                <input class="red-input" type="text" id="locationInput" required minlength="3" maxlength="15" value="Horodotska St">-->
@@ -47,11 +44,10 @@
                 </div>
 
                 <label for="password-input">Password</label>
-                <input class="red-input" type="password" id="password-input" required minlength="5" maxlength="14"
-                       value="Hello">
+                <input class="red-input" type="password" id="password-input" required minlength="5" maxlength="14">
 
                 <label for="confirm-password">Confirm password</label>
-                <input class="red-input" type="password" id="confirm-password" required value="Hello">
+                <input class="red-input" type="password" id="confirm-password" required>
 
                 <div class="submit-button-container"> <!-- to center the button -->
                     <button class="submit-form-button" type="submit">Submit</button>
