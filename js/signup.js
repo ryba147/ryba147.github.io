@@ -18,8 +18,7 @@ window.addEventListener('load', () => {
         const radios = document.getElementsByName('role-input');
 
         let userRole = null;
-        const radiosLen = radios.length;
-        for (let i = 0; i < radiosLen; i += 1) {
+        for (let i = 0; i < radios.length; ++i) {
             if (radios[i].checked) {
                 userRole = radios[i].value;
                 break; // якщо знайшли обране - виходимо з циклу
