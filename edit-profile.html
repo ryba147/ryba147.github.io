@@ -5,9 +5,9 @@
     <title>Update profile | Antise</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
-
-    <script src="js/signup.js"></script>
-    <script src="js/validators.js"></script>
+<!--    <script src="js/validators.js"></script>-->
+    <script type="module" src="js/provider.js"></script>
+<!--    <script type="module" src="js/userService.js"></script>-->
 </head>
 <body>
 
@@ -19,8 +19,8 @@
     <a href="local-announcements.html">Local announcements</a>
     <a href="user-page.html">
         <div class="profile-container">
-            <span id="username">Welcome, taras134</span>
-            <img src="img/car.jpg" alt="Profile photo">
+            <span id="username">Welcome, <span id="navbar-name"></span></span>
+            <img id="navbar-avatar" src="img/user.svg" alt="Profile photo">
         </div>
     </a>
 </div>
@@ -29,26 +29,27 @@
 
 <div class="content-container">
     <div class="info-editor-container">
-        <form id="" class="login-reg-form">
-            <div id="profile-photo"><img src="img/car.jpg" alt="Profile photo"></div>
-            <div class="edit"><a href="#">Click to change photo</a></div>
-            <div class="delete-account"><a href="index.html">Delete an account</a></div>
+        <form name="userUpdateForm" class="login-reg-form">
+            <div id="profile-photo">
+                <img id="editor-avatar" src="img/user.svg" alt="Profile photo">
+            </div>
+            <label class="file-upload">
+                <input type="file" id="file-selector" name="file" accept=".jpg, .jpeg, .png">
+                <span id="file-info">Click to change photo</span>
+            </label>
 
             <label for="firstname">First name</label>
-            <input class="red-input" type="text" id="firstname" required minlength="3" maxlength="16"
-                   value="Taras">
+            <input name="firstname" class="red-input" type="text" id="firstname" required minlength="3" maxlength="16">
+
             <label for="lastname">Last name</label>
-            <input class="red-input" type="text" id="lastname" required minlength="3" maxlength="16"
-                   value="Test">
+            <input name="lastname" class="red-input" type="text" id="lastname" required minlength="3" maxlength="16">
 
             <label for="email">Email</label>
-            <input class="red-input" type="text" id="email" required minlength="3" maxlength="45"
-                   value="test@gmail.com">
+            <input name="email" class="red-input" type="text" id="email" required minlength="3" maxlength="45">
 
             <label for="location">Location</label>
-            <input class="red-input" type="text" id="location" required minlength="3" maxlength="15"
-                   value="Lviv, Ukraine">
-
+            <input class="red-input" type="text" id="location" required maxlength="15" value="1">
+<!--
             <div class="radio-title">Role</div>
             <div class="signup-form-radio">
                 <label for="user-choice">Regular</label>
@@ -58,16 +59,46 @@
                 <input type="radio" id="admin-choice" name="role" value="admin">
             </div>
 
-            <label for="password">Password</label>
-            <input class="red-input" type="password" id="password" required minlength="5" maxlength="14"
+            <label for="password-input">Password</label>
+            <input class="red-input" type="password" id="password-input" required minlength="5" maxlength="14"
                    value="Hello">
 
             <label for="confirm-password">Confirm password</label>
-            <input class="red-input" type="password" id="confirm-password" required value="Hello">
+            <input class="red-input" type="password" id="confirm-password" required value="Hello">-->
 
             <div class="submit-button-container">
-                <button class="submit-form-button" type="submit">Submit</button>
+                <button class="submit-form-button" type="submit" onclick="updateUser()">Submit</button>
             </div>
+
+            <script>
+                function updateUser() {
+                    const reqURL = 'http://127.0.0.1:5000/users/1';
+                    const formData = new FormData(document.forms.userUpdateForm);
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('PUT', reqURL, false);
+                    xhr.setRequestHeader('Authorization', 'Basic ' + localStorage.getItem('basicAuthToken'));
+                    xhr.send(formData);
+                    console.log(xhr);
+                    console.log(xhr.response);
+                    alert();
+
+
+                    const request = new XMLHttpRequest();
+
+                    request.open('GET', reqURL, false);
+                    request.send();
+
+                    console.log(request.response);
+                    console.log(request.status);
+                    alert();
+
+                    const data = JSON.parse(request.response);
+                    localStorage.setItem('userData', JSON.stringify((data)));
+                }
+            </script>
+
+            <div class="delete-account"><a href="announcements.html">Delete an account</a></div>
         </form>
     </div>
 </div>

@@ -5,7 +5,7 @@
     <title>Account | Antise</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
-    <script src="js/provider.js"></script>
+    <script type="module" src="js/provider.js"></script>
 </head>
 <body>
 
@@ -14,25 +14,24 @@
 </div>
 
 <div class="navbar">
-    <a href="logged.html">Main page</a>
+    <a href="index.html">Main page</a>
     <a href="add-announcement.html">Add an announcement</a>
     <a href="user-list.html">User list</a>
     <a href="user-page.html">
         <div class="profile-container">
-            <span id="username">Welcome, <span id="name"></span></span>
-            <img src="img/car.jpg" alt="Profile photo">
+            <span id="username">Welcome, <span id="navbar-name">undefined</span></span>
+            <img id="navbar-avatar" src="img/user.svg" alt="Profile photo">
         </div>
     </a>
 </div>
 
 <div class="container">
     <div class="user-info-container">
-        <div id="profile-photo"><img src="img/car.jpg" alt="Profile photo"></div>
-        <div class="caption" id="full-name">Taras Vilinskyi</div>
+        <div id="profile-photo"><img src="img/user.svg" alt="Profile photo"></div>
+        <div class="caption" id="full-name">Undefined</div>
 
         <div class="edit"><a href="edit-profile.html">Edit profile</a></div>
-        <div class="logout-button"><a href="index.html" onclick="logout()">Logout</a></div>
-        <button id="b" onclick="logout()">Click me</button>
+        <div class="logout-button" id="b"><a href="login.html" onclick="logout()">Logout</a></div>
 
         <div class="user-info">
             <span class="info-row"><img class="info-ico" src="img/icons/pin.svg" alt="Map pin">Lviv, Ukraine</span>
@@ -41,7 +40,7 @@
         </div>
 
         <div class="statistics">
-            <a href="announcement-list.html">
+            <a href="announcements.html">
             <div class="statistics-col">
                 <div class="stat-num">15</div>
                 <div class="stat-name">Announcements</div>

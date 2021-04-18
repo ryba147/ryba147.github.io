@@ -5,7 +5,8 @@
     <title>My announcements | Antise</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
-    <script type="module" src="js/announcementsHandler.js"></script>
+    <script type="module" src="js/announcementService.js"></script>
+    <script type="module" src="js/provider.js"></script>
 </head>
 <body>
 <div class="header">
@@ -13,11 +14,11 @@
 </div>
 
 <div class="navbar">
-    <a href="signup.html">Sign up</a>
+    <a href="local-announcements.html">Local announcements</a>
     <a href="user-page.html">
         <div class="profile-container">
-            <span>Welcome, taras134</span>
-            <img src="img/car.jpg" alt="Profile photo">
+            <span id="username">Welcome, <span id="navbar-name"></span></span>
+            <img id="navbar-avatar" src="img/user.svg" alt="Profile photo">
         </div>
     </a>
 </div>

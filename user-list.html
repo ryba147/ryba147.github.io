@@ -5,6 +5,7 @@
     <title>User list | Antise</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
+    <script type="module" src="js/provider.js"></script>
 </head>
 <body>
 <div class="header">
@@ -15,8 +16,8 @@
     <a href="user-page.html">Back</a>
     <a href="user-page.html">
         <div class="profile-container">
-            <span>Welcome, taras134</span>
-            <img src="img/car.jpg" alt="Profile photo">
+            <span id="username">Welcome, <span id="navbar-name"></span></span>
+            <img id="navbar-avatar" src="img/user.svg" alt="Profile photo">
         </div>
     </a>
 </div>
