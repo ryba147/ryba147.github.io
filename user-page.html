@@ -27,11 +27,13 @@
 
 <div class="container">
     <div class="user-info-container">
-        <div id="profile-photo"><img src="img/user.svg" alt="Profile photo"></div>
+        <div id="profile-photo">
+            <img id="user-photo" src="img/user.svg" alt="Profile photo">
+        </div>
         <div class="caption" id="full-name">Undefined</div>
 
         <div class="edit"><a href="edit-profile.html">Edit profile</a></div>
-        <div class="logout-button" id="b"><a href="login.html" onclick="logout()">Logout</a></div>
+        <div class="logout-button"><a id="logout">Logout</a></div>
 
         <div class="user-info">
             <span class="info-row"><img class="info-ico" src="img/icons/pin.svg" alt="Map pin">Lviv, Ukraine</span>

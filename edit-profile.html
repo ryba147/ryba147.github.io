@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
 <!--    <script src="js/validators.js"></script>-->
     <script type="module" src="js/provider.js"></script>
-<!--    <script type="module" src="js/userService.js"></script>-->
+    <script type="module" src="js/userService.js"></script>
 </head>
 <body>
 
@@ -83,7 +83,6 @@
                     console.log(xhr.response);
                     alert();
 
-
                     const request = new XMLHttpRequest();
 
                     request.open('GET', reqURL, false);
@@ -98,7 +97,7 @@
                 }
             </script>
 
-            <div class="delete-account"><a href="announcements.html">Delete an account</a></div>
+            <div class="delete-account"><a id="delete-user">Delete an account</a></div>
         </form>
     </div>
 </div>

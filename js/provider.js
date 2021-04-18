@@ -7,13 +7,18 @@ window.addEventListener('load', () => {
     const user = JSON.parse(localStorage.getItem('userData'));
 
     if (user) {
-        document.getElementById('navbar-name').innerHTML = user.firstname;
-        document.getElementById('navbar-avatar').src = `${CLOUDINARY_URL}${user.img_name}`;
+        document.getElementById('navbar-name').innerHTML = user.username;
+        if (user.img_name != null) {
+            document.getElementById('navbar-avatar').src = `${CLOUDINARY_URL}${user.img_name}`;
+        }
 
         if (window.location.toString().includes('user-page.html')) {
             document.getElementById('full-name').innerHTML = user.firstname + ' ' + user.lastname;
+            if (user.img_name != null) {
+                document.getElementById('user-photo').src = `${CLOUDINARY_URL}${user.img_name}`;
+            }
 
-            const logOutBut = document.getElementById('b');
+            const logOutBut = document.getElementById('logout');
             if (logOutBut) {
                 logOutBut.onclick = function logout() {
                     localStorage.removeItem('userData');
@@ -24,7 +29,9 @@ window.addEventListener('load', () => {
         }
 
         if (window.location.toString().includes('edit-profile.html')) {
-            document.getElementById('editor-avatar').src = `${CLOUDINARY_URL}${user.img_name}`;
+            if (user.img_name !== null) {
+                document.getElementById('editor-avatar').src = `${CLOUDINARY_URL}${user.img_name}`;
+            }
             document.getElementById('firstname').value = user.firstname;
             document.getElementById('lastname').value = user.lastname;
             document.getElementById('email').value = user.email;
