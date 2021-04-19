@@ -14,8 +14,9 @@
 </div>
 
 <div class="navbar">
-    <a href="index.html">Main page</a>
+    <a href="logged.html">Main page</a>
     <a href="add-announcement.html">Add an announcement</a>
+    <a href="my-announcements.html">My announcements</a>
     <a href="user-list.html">User list</a>
     <a href="user-page.html">
         <div class="profile-container">
@@ -36,24 +37,24 @@
         <div class="logout-button"><a id="logout">Logout</a></div>
 
         <div class="user-info">
-            <span class="info-row"><img class="info-ico" src="img/icons/pin.svg" alt="Map pin">Lviv, Ukraine</span>
-            <span class="info-row"><img class="info-ico" src="img/icons/programmer.svg" alt="User role">Admin</span>
-            <span class="info-row"><img class="info-ico" src="img/icons/email.svg" alt="Email">admin@admin.com</span>
+            <img class="info-ico" src="img/icons/pin.svg" alt="Map pin"><span id="location" class="info-row">Lviv, Ukraine</span>
+            <img class="info-ico" src="img/icons/programmer.svg" alt="User role"><span id="user-role" class="info-row">Admin</span>
+            <img class="info-ico" src="img/icons/email.svg" alt="Email"><span id="email" class="info-row">admin@admin.com</span>
         </div>
 
         <div class="statistics">
-            <a href="announcements.html">
+            <a href="my-announcements.html">
             <div class="statistics-col">
-                <div class="stat-num">15</div>
+                <div id="user-anno-count" class="stat-num">0</div>
                 <div class="stat-name">Announcements</div>
             </div>
             </a>
             <div class="statistics-col">
-                <div class="stat-num">24</div>
+                <div class="stat-num">0</div>
                 <div class="stat-name">Shares</div>
             </div>
             <div class="statistics-col">
-                <div class="stat-num">2</div>
+                <div class="stat-num">0</div>
                 <div class="stat-name">Comments</div>
             </div>
         </div>

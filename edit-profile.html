@@ -5,7 +5,7 @@
     <title>Update profile | Antise</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
-<!--    <script src="js/validators.js"></script>-->
+    <script type="module" src="js/validators.js"></script>
     <script type="module" src="js/provider.js"></script>
     <script type="module" src="js/userService.js"></script>
 </head>
@@ -16,7 +16,7 @@
 </div>
 
 <div class="navbar">
-    <a href="local-announcements.html">Local announcements</a>
+    <a href="user-page.html">Back</a>
     <a href="user-page.html">
         <div class="profile-container">
             <span id="username">Welcome, <span id="navbar-name"></span></span>
@@ -29,7 +29,7 @@
 
 <div class="content-container">
     <div class="info-editor-container">
-        <form name="userUpdateForm" class="login-reg-form">
+        <form name="userUpdateForm" class="login-reg-form" id="update-user-form">
             <div id="profile-photo">
                 <img id="editor-avatar" src="img/user.svg" alt="Profile photo">
             </div>
@@ -48,55 +48,17 @@
             <input name="email" class="red-input" type="text" id="email" required minlength="3" maxlength="45">
 
             <label for="location">Location</label>
-            <input class="red-input" type="text" id="location" required maxlength="15" value="1">
-<!--
-            <div class="radio-title">Role</div>
-            <div class="signup-form-radio">
-                <label for="user-choice">Regular</label>
-                <input type="radio" id="user-choice" name="role" value="regular" checked>
+            <input name="location" class="red-input" type="text" id="location" maxlength="15">
 
-                <label for="admin-choice">Admin</label>
-                <input type="radio" id="admin-choice" name="role" value="admin">
-            </div>
+            <label for="password-input">Change password</label>
+            <input name="password" class="red-input" type="password" id="password-input" minlength="5" maxlength="14">
 
-            <label for="password-input">Password</label>
-            <input class="red-input" type="password" id="password-input" required minlength="5" maxlength="14"
-                   value="Hello">
-
-            <label for="confirm-password">Confirm password</label>
-            <input class="red-input" type="password" id="confirm-password" required value="Hello">-->
+            <label for="confirm-password">New password</label>
+            <input name="confirm-password" class="red-input" type="password" id="confirm-password">
 
             <div class="submit-button-container">
-                <button class="submit-form-button" type="submit" onclick="updateUser()">Submit</button>
+                <button class="submit-form-button" type="submit">Submit</button>
             </div>
-
-            <script>
-                function updateUser() {
-                    const reqURL = 'http://127.0.0.1:5000/users/1';
-                    const formData = new FormData(document.forms.userUpdateForm);
-
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('PUT', reqURL, false);
-                    xhr.setRequestHeader('Authorization', 'Basic ' + localStorage.getItem('basicAuthToken'));
-                    xhr.send(formData);
-                    console.log(xhr);
-                    console.log(xhr.response);
-                    alert();
-
-                    const request = new XMLHttpRequest();
-
-                    request.open('GET', reqURL, false);
-                    request.send();
-
-                    console.log(request.response);
-                    console.log(request.status);
-                    alert();
-
-                    const data = JSON.parse(request.response);
-                    localStorage.setItem('userData', JSON.stringify((data)));
-                }
-            </script>
-
             <div class="delete-account"><a id="delete-user">Delete an account</a></div>
         </form>
     </div>
