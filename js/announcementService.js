@@ -16,13 +16,27 @@ if (window.location.toString().includes('my-announcements.html')) {
         var mainContainer = document.getElementById('anno-container');
 
         for (let i = 0; i < announcements.length; ++i) {
-            var div = document.createElement('div');
-            div.className = 'ann-container';
+            var container = document.createElement('div');
+            container.className = 'ann-container';
             // var div = document.querySelector('div.ann-container');
 
-            div.innerHTML = 'Name: ' + announcements[i].title + ' ' + announcements[i].description;
-            div.innerHTML = `<img src="${CLOUDINARY_URL}${announcements[i].img_name}" alt="">`;
-            mainContainer.appendChild(div);
+            container.innerHTML = 'Name: ' + announcements[i].title + ' ' + announcements[i].description;
+            container.innerHTML = `<img src="${CLOUDINARY_URL}${announcements[i].img_name}" alt="">`;
+            mainContainer.appendChild(container);
+
+            var annTitle = document.createElement('div');
+            annTitle.className = 'ann-name';
+            container.appendChild(annTitle).innerHTML = announcements[i].title;
+
+            var insideDate = document.createElement('div');
+            insideDate.className = 'ann-date';
+            container.appendChild(insideDate).innerHTML = announcements[i].event_date;
+
+            var annDescription = document.createElement('div');
+            annDescription.className = 'ann-description';
+            container.appendChild(annDescription).innerHTML = announcements[i].description;
+
+            // div.appendChild(document.createElement('div')).className = 'ann-name'.innerHtml
         }
     });
 }

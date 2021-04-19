@@ -33,6 +33,7 @@ window.addEventListener('load', () => {
             document.getElementById('email').innerHTML = user.email;
             document.getElementById('user-anno-count').innerHTML = userAnnouncementsNo;
             document.getElementById('location').innerHTML = user.location;
+            document.getElementById('user-role').innerHTML = user.role;
 
             const logOutBut = document.getElementById('logout');
             if (logOutBut) {
