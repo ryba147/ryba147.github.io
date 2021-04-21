@@ -1,8 +1,7 @@
-import { API_URL } from './constants.js';
+import { API_URL, CLOUDINARY_URL } from './constants.js';
 
 window.addEventListener('load', () => {
     const user = JSON.parse(localStorage.getItem('userData'));
-
     if (user) {
         if (window.location.toString().includes('edit-profile.html')) {
             const fileSelector = document.getElementById('file-selector');
@@ -11,12 +10,10 @@ window.addEventListener('load', () => {
                 const output = document.getElementById('file-info');
                 output.innerHTML = fileList[0].name;
             });
-        }
 
-        if (window.location.toString().includes('edit-profile.html')) {
-            const signupForm = document.getElementById('update-user-form');
+            const updateForm = document.getElementById('update-user-form');
 
-            signupForm.onsubmit = function (event) {
+            updateForm.onsubmit = (event) => {
                 event.preventDefault();
 
                 const reqURL = `${API_URL}/users/${user.id}`;
@@ -30,7 +27,7 @@ window.addEventListener('load', () => {
 
                 if (xhr.status === 200) {
                     alert('User was updated successfully');
-                    window.location.reload();
+                    // window.location.reload();
                     const reqUrl = new URL(`${API_URL}/users/login`);
                     const request = new XMLHttpRequest();
 
@@ -39,14 +36,15 @@ window.addEventListener('load', () => {
                         reqUrl.searchParams.append('password', formData.get('password').toString());
                     } else {
                         const headerToDecode = atob(localStorage.getItem('basicAuthToken'));
-                        const decodedPass = headerToDecode
-                            .slice(Math.ceil(headerToDecode.length / 2));
+                        const decodedPass = headerToDecode.split(':').pop();
+                        formData.set('password', null);
                         reqUrl.searchParams.append('password', decodedPass);
                     }
 
                     request.open('GET', reqUrl.toString(), false);
                     request.setRequestHeader('Content-Type', 'application/json');
                     request.send();
+                    console.log(request.response);
 
                     const data = JSON.parse(request.response);
                     localStorage.setItem('userData', JSON.stringify((data.userData)));
@@ -80,6 +78,31 @@ window.addEventListener('load', () => {
 
                 window.location.href = 'signup.html';
             });
+        }
+        if (window.location.toString().includes('user-list.html')) {
+            const reqURL = new URL(`${API_URL}/users`);
+
+            const request = new XMLHttpRequest();
+            request.open('GET', reqURL.toString(), false);
+            request.setRequestHeader('Authorization', 'Basic ' + localStorage.getItem('basicAuthToken'));
+            request.send();
+            console.log(request.response);
+
+            const userList = JSON.parse(request.response);
+            console.log(userList.length);
+
+            const mainContainer = document.getElementById('user-list');
+            for (let i = 0; i < userList.length; ++i) {
+                const userInfo = document.createElement('div');
+                userInfo.className = 'ann-info';
+                mainContainer.appendChild(userInfo);
+
+                userInfo.innerHTML = `<span class="info-row"><img class="ann-photo" src="${CLOUDINARY_URL}${userList[i].img_name}" alt=""></span>`;
+                userInfo.innerHTML
+                    += `<span class="info-row">Name: ${userList[i].firstname} ${userList[i].lastname} </span>`
+                    + `<span class="info-row">Email: ${userList[i].email} </span>` + `<span class="info-row">Location: ${userList[i].location} </span>`
+                    + `<span class="info-row">Role: ${userList[i].role}</span>`;
+            }
         }
     } else {
         window.location.replace('login.html');

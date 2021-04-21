@@ -10,6 +10,10 @@
   }
 }
 
+.info-row img {
+  object-fit: cover;
+}
+
 .ann-photo {
   @include border-radius(5px);
   height: 65px;

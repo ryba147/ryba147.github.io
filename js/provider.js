@@ -1,12 +1,11 @@
 import { API_URL, CLOUDINARY_URL } from './constants.js';
 
 window.addEventListener('load', () => {
-    console.log(localStorage.getItem('basicAuthToken'));
-    console.log(JSON.parse(localStorage.getItem('userData')));
+    // console.log(localStorage.getItem('basicAuthToken'));
+    // console.log(JSON.parse(localStorage.getItem('userData')));
 
     const user = JSON.parse(localStorage.getItem('userData'));
     let userAnnouncementsNo = null;
-
     if (user) {
         if (window.location.toString().includes('index.html')) {
             window.location.replace('logged.html');
@@ -19,9 +18,11 @@ window.addEventListener('load', () => {
 
         if (window.location.toString().includes('user-page.html')) {
             if (userAnnouncementsNo === null) {
-                const reqURL = new URL(`${API_URL}/announcements`);
+                const reqURL = new URL(`${API_URL}/announcements/filter_by`);
+                reqURL.searchParams.append('author_id', user.id);
                 const request = new XMLHttpRequest();
-                request.open('GET', reqURL, false);
+                request.open('GET', reqURL.toString(), false);
+                request.setRequestHeader('Authorization', 'Basic ' + localStorage.getItem('basicAuthToken'));
                 request.send();
                 userAnnouncementsNo = JSON.parse(request.response).length;
             }

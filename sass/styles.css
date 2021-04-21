@@ -604,7 +604,8 @@ button:hover {
 }
 
 .info-row {
-  margin: 0 auto;
+  /*margin: 0 auto;*/
+  margin-right: 50px;
 }
 
 .caption {
@@ -704,6 +705,10 @@ button:hover {
 .ann-info:hover {
   cursor: pointer;
   background-color: #FFF3F2;
+}
+
+.info-row img {
+  object-fit: cover;
 }
 
 .ann-photo {

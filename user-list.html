@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="sass/styles.css">
     <script type="module" src="js/provider.js"></script>
+    <script type="module" src="js/userService.js"></script>
 </head>
 <body>
 <div class="header">
@@ -25,22 +26,7 @@
 <div class="caption">User list</div>
 
 <div class="container">
-    <div class="ann-info">
-        <span class="important-row info-row"><img class="ann-photo" src="img/car.jpg" alt="Announcement photo">Username: taras134</span>
-        <span class="info-row">First name: Taras</span>
-        <span class="info-row">Last name: Vilinskyi</span>
-        <span class="info-row">Email: admin@admin.com</span>
-        <span class="info-row"><img class="info-ico" src="img/icons/pin.svg" alt="Map pin">Lviv, Ukraine</span>
-        <span class="important-row info-row">Role: admin</span>
-    </div>
-    <div class="ann-info">
-        <span class="important-row info-row"><img class="ann-photo" src="img/user.svg" alt="Announcement photo">Username: some_user</span>
-        <span class="info-row">First name: Test</span>
-        <span class="info-row">Last name: Test</span>
-        <span class="info-row">Email: admin@admin.com</span>
-        <span class="info-row"><img class="info-ico" src="img/icons/pin.svg" alt="Map pin">Lviv, Ukraine</span>
-        <span class="important-row info-row">Role: regular</span>
-    </div>
+    <div id="user-list"></div>
 </div>
 
 <footer class="footer">
