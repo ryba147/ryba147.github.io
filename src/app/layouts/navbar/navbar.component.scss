@@ -1,0 +1,81 @@
+@import "variables";
+@import "colors";
+@import "mixins";
+
+.navbar {
+  @include box-shadow();
+
+  z-index: 1;
+  text-align: left;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
+  width: 100%;
+  overflow: hidden;
+  background-color: $salmon;
+
+  a {
+    color: $white;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    padding: 35px;
+
+    &:last-child {
+      float: right; /* only contact us button has a float*/
+      padding: 25px;
+    }
+
+    &:hover {
+      @include transition($transition-04);
+      color: $primary-color;
+    }
+  }
+}
+
+.profile-container {
+  display: flex;
+  align-items:center;
+
+  img {
+    @include border-radius(50%);
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  #username {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    text-align: center;
+
+    .profile-container {
+      @include center();
+
+      img {
+        display: none;
+        margin: 0;
+      }
+
+      #username {
+        margin: 0;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 15px;
+
+      &:last-child {
+        float: none;
+        padding: 15px;
+      }
+    }
+  }
+}
