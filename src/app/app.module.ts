@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserProfileModule } from '@modules/user-profile/user-profile.module';
 import { SharedModule } from '@shared/shared.module';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
+import { AuthModule } from '@modules/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, NavbarComponent],
@@ -24,6 +25,7 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 
     // 3rd party
     UserProfileModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],
