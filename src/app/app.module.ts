@@ -10,11 +10,7 @@ import { SharedModule } from '@shared/shared.module';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    NavbarComponent,
-  ],
+  declarations: [AppComponent, FooterComponent, NavbarComponent],
   imports: [
     // angular
     BrowserModule,
@@ -32,5 +28,4 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
