@@ -33,7 +33,8 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/sass",
-                "src/sass/abstracts"
+                "src/sass/abstracts",
+                "src/sass/components"
               ]
             },
             "scripts": []
@@ -102,7 +103,8 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/sass",
-                "src/sass/abstracts"
+                "src/sass/abstracts",
+                "src/sass/components"
               ]
             },
             "scripts": []

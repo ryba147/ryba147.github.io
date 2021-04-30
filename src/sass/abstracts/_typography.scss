@@ -3,6 +3,10 @@ $normal: 400;
 $semibold: 500;
 $bold: 700;
 
+* {
+  font-family: 'Dosis', sans-serif;
+}
+
 a {
   color: $primary-color;
   text-decoration: none;

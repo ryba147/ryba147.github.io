@@ -1,0 +1,118 @@
+@import "variables";
+@import "colors";
+@import "typography";
+@import "mixins";
+
+.signup-form-radio {
+  input {
+    height: 15px;
+    margin: 17px;
+  }
+
+  label {
+    padding: 15px;
+  }
+}
+
+.content-container {
+  padding-bottom: 14px;
+}
+
+.heading {
+  color: $primary-color;
+  font-weight: $bold;
+  font-size: 72px;
+  text-align: center;
+  padding: 15px 0 15px 0;
+}
+
+.form-container {
+  @include border-radius(10px);
+  @include box-shadow();
+
+  background-color: $white;
+  width: 70%;
+  height: max-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.form-container {
+  .left-part img {
+    float: left;
+    width: 50%;
+    height: 550px;
+    object-fit: cover;
+    position: relative;
+
+    @media (max-width: 992px) {
+      width: 40%;
+    }
+
+    @media (max-width: 768px) {
+      width: 0;
+      display: none;
+    }
+  }
+
+  .login-reg-form {
+    padding: 50px;
+
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 992px) {
+      width: 60%;
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: $semibold;
+    color: $primary-color;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 34px;
+
+    width: 100%;
+    display: block;
+  }
+
+  .link1-txt {
+    @include logreg-page-link(14px, $bold, 15px);
+
+    #login-link {
+      font-weight: $bold;
+    }
+  }
+
+  .link2-txt {
+    @include logreg-page-link(14px, $bold, 70px, 0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .link2-txt {
+    padding-bottom: 51px;
+  }
+
+  .form-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .form-container {
+    width: 90%;
+  }
+}
