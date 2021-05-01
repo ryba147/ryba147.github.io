@@ -9,6 +9,8 @@ import { UserProfileModule } from '@modules/user-profile/user-profile.module';
 import { SharedModule } from '@shared/shared.module';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { AuthModule } from '@modules/auth/auth.module';
+import { AuthService } from '@core/services/auth.service';
+import { AuthGuard } from '@core/guards/auth.guard';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, NavbarComponent],
@@ -27,7 +29,7 @@ import { AuthModule } from '@modules/auth/auth.module';
     UserProfileModule,
     AuthModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

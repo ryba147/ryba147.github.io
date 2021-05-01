@@ -5,17 +5,17 @@ import { UserService } from '@app/core/services/user.service';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
+  styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-
   users: User[];
 
-  constructor(private userService: UserService) {
-  }
+  constructor(
+    private userService: UserService
+  ) {}
 
   getUsers(): void {
-    this.userService.getUsers().subscribe((data) => {
+    this.userService.getUserList().subscribe((data) => {
       this.users = data;
       console.log(data);
     });
@@ -24,5 +24,4 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getUsers();
   }
-
 }
