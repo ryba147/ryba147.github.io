@@ -4,16 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layouts/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { UserProfileModule } from '@modules/user-profile/user-profile.module';
 import { SharedModule } from '@shared/shared.module';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { AuthModule } from '@modules/auth/auth.module';
-import { AuthService } from '@core/services/auth.service';
 import { AuthGuard } from '@core/guards/auth.guard';
+import {AuthInterceptor} from "@core/interceptors/auth.interceptor";
+import { AuthService } from "@core/services/auth.service";
+import { UserService } from "@core/services/user.service";
+import { HeadingComponent } from './layouts/heading/heading.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, NavbarComponent],
+  declarations: [AppComponent, FooterComponent, NavbarComponent, HeadingComponent],
   imports: [
     // angular
     BrowserModule,
@@ -29,7 +32,14 @@ import { AuthGuard } from '@core/guards/auth.guard';
     UserProfileModule,
     AuthModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthGuard,
+    AuthService,
+    UserService,
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

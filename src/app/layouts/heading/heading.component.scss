@@ -1,0 +1,10 @@
+@import "colors";
+@import "typography";
+
+.heading {
+  color: $primary-color;
+  font-weight: $bold;
+  font-size: 72px;
+  text-align: center;
+  padding: 15px 0 15px 0;
+}

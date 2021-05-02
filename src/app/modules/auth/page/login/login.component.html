@@ -1,19 +1,18 @@
 <div class="content-container">
-  <div class="heading">Antise</div>
   <div class="form-container">
     <div class="left-part"><img id="login-image" src="assets/img/8244.jpg" alt="Logreg image"></div>
     <div class="right-part">
       <form [formGroup]='loginForm' (ngSubmit)='login()' id="login-page-form" class="login-reg-form" action="">
         <div class="title">Login</div>
-
+<!---->
         <label for="username-input">Username</label>
         <input formControlName='username' class="red-input" type="text" id="username-input"
                required minlength="3" maxlength="14">
-
+<!---->
         <label for="password-input">Password</label>
         <input formControlName='password' class="red-input" type="password" id="password-input"
                required minlength="3" maxlength="14">
-
+<!---->
         <div class="submit-button-container"> <!-- to center the button -->
           <button class="submit-form-button" type="submit">Submit</button>
         </div>

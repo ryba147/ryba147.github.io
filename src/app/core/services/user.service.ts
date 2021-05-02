@@ -9,7 +9,7 @@ import { Constants } from '@shared/constants';
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {  }
 
   getUserList(): Observable<User[]> {
     return this.http.get<User[]>(`${Constants.apiURL}/users`);

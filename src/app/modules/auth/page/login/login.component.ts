@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
+import {AuthService} from "@core/services/auth.service";
+import { Router } from "@angular/router";
+import {UserService} from "@core/services/user.service";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +13,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, ) {
+  constructor(private fb: FormBuilder,
+              private authService: AuthService,
+              private router: Router) {
     this.buildForm();
   }
 
@@ -21,21 +26,18 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  // login(): void {
-  //   this.authService
-  //     .authUser(new URLSearchParams(this.loginForm.value).toString())
-  //     .subscribe(
-  //       (response) => {
-  //         // this.authService.setUser(JSON.stringify(response.userData));
-  //         this.authService.setUser(response.userData);
-  //         console.log(1111, this.authService.userSubject);
-  //         console.log("loginComponent| this.u !== null: ", this.authService.userSubject !== null);
-  //       },
-  //       (error: HttpErrorResponse) => {
-  //         console.log(error);
-  //       }
-  //     );
-  // }
+  login(): void {
+    this.authService.authUser(new URLSearchParams(this.loginForm.value).toString())
+      .subscribe((response) => {
+          localStorage.setItem('currentUser', JSON.stringify(response.userData));
+          localStorage.setItem('authHeader', JSON.stringify(response.authHeader));
+          this.router.navigate(['home']);
+        },
+        (error: HttpErrorResponse) => {
+          console.log(error);
+        }
+      );
+  }
 
   ngOnInit(): void {}
 }
