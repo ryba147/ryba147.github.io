@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '@app/models/user';
-import {Constants} from "@shared/constants";
+import { Constants } from '@shared/constants';
+import { AuthService } from '@core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,7 +14,12 @@ export class UserProfileComponent implements OnInit {
   currentUser: User;
   readonly CLOUDINARY_URL = Constants.CLOUDINARY_URL;
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) { }
+
+  logout():void {
+    this.authService.logout();
+    this.router.navigate(['login']);
+  }
 
   ngOnInit(): void {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));

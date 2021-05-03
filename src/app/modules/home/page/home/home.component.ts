@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '@app/models/user';
-import {Constants} from '@shared/constants';
-import {UserService} from '@core/services/user.service';
-import {AuthService} from '@core/services/auth.service';
-import {Router} from '@angular/router';
+import { Constants } from '@shared/constants';
+import { UserService } from '@core/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -15,18 +13,13 @@ export class HomeComponent implements OnInit {
   loading: boolean;
   readonly CLOUDINARY_URL = Constants.CLOUDINARY_URL;
 
-  constructor(private userService: UserService, private authService: AuthService, private router: Router) {
+  constructor(private userService: UserService) {
   }
 
   getUsers(): void {
     this.userService.getUserList().subscribe((data) => {
       this.users = data;
     });
-  }
-
-  logout():void {
-    this.authService.logout();
-    this.router.navigate(['login']);
   }
 
   ngOnInit(): void {

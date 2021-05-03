@@ -16,9 +16,10 @@ import { UserService } from '@core/services/user.service';
 import { HeadingComponent } from './layouts/heading/heading.component';
 import { ErrorInterceptor } from '@core/interceptors/error.interceptor';
 import { HomeModule } from '@modules/home/home.module';
+import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, NavbarComponent, HeadingComponent],
+  declarations: [AppComponent, FooterComponent, NavbarComponent, HeadingComponent, ContentLayoutComponent],
   imports: [
     // angular
     BrowserModule,

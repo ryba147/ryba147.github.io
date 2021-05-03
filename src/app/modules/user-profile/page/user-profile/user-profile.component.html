@@ -5,8 +5,8 @@
     </div>
     <div class="caption" id="full-name">{{currentUser.firstname}} {{currentUser.lastname}}</div>
 
-    <div class="edit"><a href="/edit">Edit profile</a></div>
-    <div class="logout-button"><a id="logout">Logout</a></div>
+    <div class="edit"><a href="/profile/edit">Edit profile</a></div>
+    <div (click)="logout()" class="logout-button">Logout</div>
 
     <div class="user-info">
       <span><img class="info-ico" src="assets/img/icons/pin.svg" alt="Map pin">
