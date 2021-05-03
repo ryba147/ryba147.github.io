@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="user-info-container">
+    <div id="profile-photo">
+      <img src="{{CLOUDINARY_URL}}/{{currentUser.img_name}}" onerror="this.src='assets/img/user.svg';" alt="">
+    </div>
+    <div class="caption" id="full-name">{{currentUser.firstname}} {{currentUser.lastname}}</div>
+
+    <div class="edit"><a href="/edit">Edit profile</a></div>
+    <div class="logout-button"><a id="logout">Logout</a></div>
+
+    <div class="user-info">
+      <span><img class="info-ico" src="assets/img/icons/pin.svg" alt="Map pin">
+        <span id="location" class="info-row">{{currentUser.location}}</span>
+      </span>
+
+      <span><img class="info-ico" src="assets/img/icons/programmer.svg" alt="User role">
+        <span id="user-role" class="info-row">{{currentUser.role}}</span>
+      </span>
+      <span><img class="info-ico" src="assets/img/icons/email.svg" alt="Email">
+        <span id="email" class="info-row">{{currentUser.email}}</span>
+      </span>
+    </div>
+
+    <div class="statistics">
+      <a href="#">
+        <div class="statistics-col">
+          <div id="user-anno-count" class="stat-num">0</div>
+          <div class="stat-name">Announcements</div>
+        </div>
+      </a>
+      <div class="statistics-col">
+        <div class="stat-num">0</div>
+        <div class="stat-name">Shares</div>
+      </div>
+      <div class="statistics-col">
+        <div class="stat-num">0</div>
+        <div class="stat-name">Comments</div>
+      </div>
+    </div>
+  </div>
+</div>

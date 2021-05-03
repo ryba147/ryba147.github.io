@@ -28,12 +28,12 @@ export class RegistrationComponent implements OnInit {
 
   buildForm(): void {
     this.regForm = this.fb.group({
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
-      username: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.pattern(Constants.EMAIL_REGEX)]],
+      firstname: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      lastname: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      username: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      email: ['', [Validators.required, Validators.pattern(Constants.EMAIL_REGEX), Validators.minLength(5), Validators.maxLength(40)]],
       role: [this.userRole, [Validators.required]],
-      password: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
       confirmPassword: ['', [Validators.required]],
     }, { validators: this.passwordMatcher });
   }

@@ -13,12 +13,16 @@
 
         <div *ngIf="f.firstname.touched && f.firstname.errors" class="invalid-feedback">
           <div *ngIf="f.firstname.errors.required">Firstname is required</div>
+          <div *ngIf="f.firstname.errors.minlength">Minimum length is 5</div>
+          <div *ngIf="f.firstname.errors.maxlength">Maximum length is 20</div>
         </div>
 
         <label for="lastname-input">Last name</label>
         <input formControlName="lastname" class="red-input" type="text" id="lastname-input">
         <div *ngIf="f.lastname.touched && f.lastname.errors" class="invalid-feedback">
           <div *ngIf="f.lastname.errors.required">Lastname is required</div>
+          <div *ngIf="f.lastname.errors.minlength">Minimum length is 5</div>
+          <div *ngIf="f.lastname.errors.maxlength">Maximum length is 20</div>
         </div>
 
         <label for="email-input">Email</label>
@@ -26,12 +30,16 @@
         <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
           <div *ngIf="f.email.errors.required">Email is required</div>
           <div *ngIf="f.email.errors.pattern">Invalid email</div>
+          <div *ngIf="f.email.errors.minlength">Minimum length is 5</div>
+          <div *ngIf="f.email.errors.maxlength">Maximum length is 40</div>
         </div>
 
         <label for="username-input">Username</label>
         <input formControlName="username" class="red-input" type="text" id="username-input">
         <div *ngIf="f.username.touched && f.username.errors" class="invalid-feedback">
           <div *ngIf="f.username.errors.required">Username is required</div>
+          <div *ngIf="f.username.errors.minlength">Minimum length is 5</div>
+          <div *ngIf="f.username.errors.maxlength">Maximum length is 20</div>
         </div>
 
         <div class="radio-title">Role</div>
@@ -48,6 +56,8 @@
         <input formControlName="password" class="red-input" type="password" id="password-input">
         <div *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
           <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">Minimum length is 5</div>
+          <div *ngIf="f.password.errors.maxlength">Maximum length is 20</div>
         </div>
 
         <label for="confirm-password">Confirm password</label>

@@ -6,7 +6,7 @@ import { AuthGuard } from '@core/guards/auth.guard';
 import { HomeComponent } from '@modules/home/page/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: '',
     children: [
