@@ -8,6 +8,18 @@ button:hover {
   cursor: pointer;
 }
 
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+
+  &:hover {
+    cursor: default;
+    transition: none;
+  }
+}
+
 .submit-button-container {
   width: 100%;
   display: flex;
