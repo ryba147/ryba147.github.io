@@ -73,6 +73,14 @@
   }
 
   .link1-txt {
+    @include logreg-page-link(14px, $bold, 15px);
+
+    #login-link {
+      font-weight: $bold;
+    }
+  }
+
+  .link1-txt {
     @include logreg-page-link($p-top:15px);
   }
 }

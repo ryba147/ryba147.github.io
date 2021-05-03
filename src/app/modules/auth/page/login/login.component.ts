@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
           localStorage.setItem('currentUser', JSON.stringify(response.userData));
           localStorage.setItem('authHeader', JSON.stringify(response.authHeader));
-          this.router.navigate(['']);
+          this.router.navigate(['home']);
         },
         (error: HttpErrorResponse) => {
           console.log(error);

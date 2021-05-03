@@ -9,7 +9,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    const basicAuthHeader = JSON.parse(localStorage.getItem('authHeader'));
+    const basicAuthHeader = JSON.parse(JSON.stringify(localStorage.getItem('authHeader')));
 
     if (basicAuthHeader) {
       req = req.clone({
