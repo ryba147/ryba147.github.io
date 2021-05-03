@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '@core/services/user.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +11,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  regForm: FormGroup;
+  userRole = 'regular';
+
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
+    this.buildForm();
+  }
 
   ngOnInit(): void {
   }
 
+  buildForm(): void {
+    this.regForm = this.fb.group({
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      role: [this.userRole, [Validators.required]],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
+    });
+
+  }
+
+  changeRole($event: any): void {
+    // console.log($event.target.value);
+    this.userRole = $event.target.value;
+  }
+
+  signup(): void {
+    this.userService.createUser(this.regForm.value).subscribe((response) => {
+      // console.log(response);
+      this.router.navigate(['login']);
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error);
+      }
+    );
+  }
 }

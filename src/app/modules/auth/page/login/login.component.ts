@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
           localStorage.setItem('currentUser', JSON.stringify(response.userData));
           localStorage.setItem('authHeader', JSON.stringify(response.authHeader));
-          this.router.navigate(['home']);
+          this.router.navigate(['']);
         },
         (error: HttpErrorResponse) => {
           console.log(error);

@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Constants } from '@shared/constants';
 
+/**
+ * Service for user authentication. Grant rights after login
+ * or remove them with an auth header.
+ **/
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +29,6 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('currentUser');
-    localStorage.removeItem('authHeader')
+    localStorage.removeItem('authHeader');
   }
 }

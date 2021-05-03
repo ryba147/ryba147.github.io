@@ -1,0 +1,93 @@
+@import "variables";
+@import "colors";
+@import "typography";
+@import "mixins";
+
+.content-container {
+  padding-bottom: 14px;
+}
+
+.form-container {
+  @include border-radius(10px);
+  @include box-shadow();
+
+  background-color: $white;
+  width: 70%;
+  height: max-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.form-container {
+  .login-reg-form {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 59px 65px 59px 55px;
+
+    @media (max-width: 992px) {
+      width: 60%;
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .left-part img {
+    float: left;
+    width: 50%;
+    height: 550px;
+    object-fit: cover;
+    position: relative;
+
+    @media (max-width: 992px) {
+      width: 40%;
+    }
+
+    @media (max-width: 768px) {
+      width: 0;
+      display: none;
+    }
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: $semibold;
+    color: $primary-color;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 34px;
+
+    width: 100%;
+    display: block;
+  }
+
+  .left-part #signup-image {
+    margin-top: 192px;
+    margin-bottom: 192px;
+  }
+
+  .link1-txt {
+    @include logreg-page-link($p-top:15px);
+  }
+}
+
+.signup-form-radio {
+  width: 100%;
+
+  display: flex;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.radio-title {
+  font-size: 16px;
+  width: 100%;
+  padding-bottom: 8px;
+}

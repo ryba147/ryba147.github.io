@@ -4,12 +4,12 @@ import { RegistrationComponent } from '@modules/auth/page/registration/registrat
 import { LoginComponent } from '@modules/auth/page/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/auth/login', pathMatch: 'full' },
   {
     path: '',
     children: [
       { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegistrationComponent }
+      { path: 'signup', component: RegistrationComponent }
     ]
   }
 ];
