@@ -14,6 +14,7 @@ import {AuthInterceptor} from "@core/interceptors/auth.interceptor";
 import { AuthService } from "@core/services/auth.service";
 import { UserService } from "@core/services/user.service";
 import { HeadingComponent } from './layouts/heading/heading.component';
+import {LoaderInterceptor} from "@core/interceptors/loader.interceptor";
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, NavbarComponent, HeadingComponent],
@@ -36,9 +37,8 @@ import { HeadingComponent } from './layouts/heading/heading.component';
     AuthGuard,
     AuthService,
     UserService,
-    {
-      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
-    }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })

@@ -17,8 +17,13 @@ export class AuthService {
 
   authUser(searchQueryString: string): Observable<AuthDetails> {
     return this.http.get<AuthDetails>(
-      `${Constants.apiURL}/users/login?${searchQueryString}`,
+      `${Constants.API_URL}/users/login?${searchQueryString}`,
       { responseType: 'json' }
     );
+  }
+
+  logout(): void {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('authHeader')
   }
 }

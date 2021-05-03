@@ -1,5 +1,14 @@
-<div *ngFor='let u of users'>
-  <p>{{u.username}}</p>
+<div class="caption">User list</div>
+<div class="list-wrapper">
+  <ul class="list">
+    <li *ngFor='let user of users' class="list-item">
+      <div>
+        <img src="{{CLOUDINARY_URL}}/{{user.img_name}}" class="list-item-image" alt="">
+      </div>
+      <div class="list-item-content">
+        <h4>{{user.username}}</h4>
+        <p>{{user.email}}</p>
+      </div>
+    </li>
+  </ul>
 </div>
-
-<button style="font-size: 34px;" (click)="logout()">Logout</button>

@@ -1,9 +1,9 @@
 <div class="navbar">
-  <a href="/">Home</a>
+  <a href="/home">Home</a>
   <a href="/profile">
-    <div class="profile-container">
-      <span id="username">Welcome, <span id="navbar-name"></span></span>
-      <img id="navbar-avatar" src="#" alt="Profile photo">
+    <div *ngIf="currentUser" class="profile-container">
+      <span id="username">Welcome, <span id="navbar-name">{{currentUser.username}}</span></span>
+      <img id="navbar-avatar" src="{{CLOUDINARY_URL}}/{{currentUser.img_name}}" alt="Profile photo">
     </div>
   </a>
 </div>

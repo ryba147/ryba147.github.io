@@ -12,6 +12,6 @@ export class UserService {
   constructor(private http: HttpClient) {  }
 
   getUserList(): Observable<User[]> {
-    return this.http.get<User[]>(`${Constants.apiURL}/users`);
+    return this.http.get<User[]>(`${Constants.API_URL}/users`);
   }
 }
