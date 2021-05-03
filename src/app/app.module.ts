@@ -15,6 +15,7 @@ import { AuthService } from '@core/services/auth.service';
 import { UserService } from '@core/services/user.service';
 import { HeadingComponent } from './layouts/heading/heading.component';
 import { ErrorInterceptor } from '@core/interceptors/error.interceptor';
+import { HomeModule } from '@modules/home/home.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, NavbarComponent, HeadingComponent],
@@ -31,6 +32,7 @@ import { ErrorInterceptor } from '@core/interceptors/error.interceptor';
 
     // 3rd party
     UserProfileModule,
+    HomeModule,
     AuthModule
   ],
   providers: [
