@@ -111,4 +111,33 @@ button[disabled]:hover {
   cursor: pointer;
 }
 
+.caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+@media (max-width: 400px) {
+  .caption {
+    font-size: 24px;
+  }
+}
+@media (max-width: 320px) {
+  .caption {
+    font-size: 18px;
+  }
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  color: #C90032;
+  padding-bottom: 10px;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import {AuthService} from "@core/services/auth.service";
 import { Router } from "@angular/router";
+import {UserService} from "@core/services/user.service";
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
+              private userService: UserService,
               private router: Router) {
     this.buildForm();
   }
@@ -29,12 +31,11 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.authService.authUser(new URLSearchParams(this.loginForm.value).toString())
       .subscribe((response) => {
-          localStorage.setItem('currentUser', JSON.stringify(response.userData));
-          localStorage.setItem('authHeader', JSON.stringify(response.authHeader));
+          this.userService.setUser(response);
           this.router.navigate(['home']);
         },
         (error: HttpErrorResponse) => {
-          console.log(error);
+          alert(error);
         }
       );
   }

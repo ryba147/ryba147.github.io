@@ -1,3 +1,61 @@
+<div class="caption">Edit profile</div>
+<div class="content-container">
+  <div class="info-editor-container">
+    <form [formGroup]="updForm" (ngSubmit)="updateUserInfo()" name="userUpdateForm" class="login-reg-form"
+          id="update-user-form">
+<!--      <p>Form value: {{ updForm.value | json }}</p>-->
+<!--      <p>Form status: {{ updForm.status | json }}</p>-->
+<!--      <p>Form errors: {{ updForm.errors | json }}</p>-->
+      <div id="profile-photo">
+        <img src="{{CLOUDINARY_URL}}/{{currentUser.img_name}}" onerror="this.src='assets/img/user.svg';"
+             alt="Profile photo">
+      </div>
+      <label class="file-upload">
+        <input (change)="onFileChange($event)" name="file" type="file" id="file-selector" accept=".jpg, .jpeg, .png">
+        <span>Click to change photo</span>
+      </label>
 
+      <label for="firstname">First name</label>
+      <input formControlName="firstname" name="firstname" [(ngModel)]="currentUser.firstname" class="red-input"
+             type="text" id="firstname">
+      <div *ngIf="f.firstname.touched && f.firstname.errors" class="invalid-feedback">
+        <div *ngIf="f.firstname.errors.minlength">Minimum length is 5</div>
+        <div *ngIf="f.firstname.errors.maxlength">Maximum length is 20</div>
+      </div>
 
-<p>edit-profile works!</p>
+      <label for="lastname">Last name</label>
+      <input formControlName="lastname" [(ngModel)]="currentUser.lastname" class="red-input" type="text" id="lastname">
+      <div *ngIf="f.lastname.touched && f.lastname.errors" class="invalid-feedback">
+        <div *ngIf="f.lastname.errors.minlength">Minimum length is 5</div>
+        <div *ngIf="f.lastname.errors.maxlength">Maximum length is 20</div>
+      </div>
+
+      <label for="email">Email</label>
+      <input formControlName="email" [(ngModel)]="currentUser.email" class="red-input" type="text" id="email">
+      <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.pattern">Invalid email</div>
+        <div *ngIf="f.email.errors.minlength">Minimum length is 5</div>
+        <div *ngIf="f.email.errors.maxlength">Maximum length is 40</div>
+      </div>
+
+      <label for="location">Location</label>
+      <input formControlName="location" [(ngModel)]="currentUser.location" class="red-input" type="text" id="location">
+
+      <label for="password-input">Set password</label>
+      <input formControlName="password" class="red-input" type="password"
+             id="password-input">
+
+      <label for="confirm-password">Confirm password</label>
+      <input formControlName="confirmPassword" class="red-input" type="password" id="confirm-password">
+
+      <div *ngIf="f.confirmPassword.touched && updForm.hasError('noMatch')" class="invalid-feedback">
+        <div>Passwords do no match</div>
+      </div>
+
+      <div class="submit-button-container">
+        <button [disabled]="updForm.invalid" class="submit-form-button" type="submit">Submit</button>
+      </div>
+      <div (click)="deleteAccount()" class="delete-account">Delete an account</div>
+    </form>
+  </div>
+</div>

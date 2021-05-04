@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "@app/models/user";
 import { Constants } from '@shared/constants';
+import {UserService} from "@core/services/user.service";
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +13,10 @@ export class NavbarComponent implements OnInit {
   currentUser: User;
   readonly CLOUDINARY_URL = Constants.CLOUDINARY_URL;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUser = this.userService.getUser();
   }
 
 }
