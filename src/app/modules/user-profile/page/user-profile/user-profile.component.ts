@@ -3,7 +3,7 @@ import { User } from '@app/models/user';
 import { Constants } from '@shared/constants';
 import { AuthService } from '@core/services/auth.service';
 import { Router } from '@angular/router';
-import {UserService} from "@core/services/user.service";
+import { UserService } from '@core/services/user.service';
 
 @Component({
   selector: 'app-user-profile',

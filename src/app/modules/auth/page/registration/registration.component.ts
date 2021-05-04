@@ -38,7 +38,7 @@ export class RegistrationComponent implements OnInit {
     }, { validators: this.passwordMatcher });
   }
 
-  changeRole($event: any): void {
+  changeRole($event): void {
     // console.log($event.target.value);
     this.userRole = $event.target.value;
     this.regForm.controls.role.setValue(this.userRole);
@@ -57,12 +57,12 @@ export class RegistrationComponent implements OnInit {
     }
 
     this.userService.createUser(this.regForm.value).subscribe((response) => {
-      console.log(response);
-      this.router.navigate(['login']);
+        console.log(response);
+        this.router.navigate(['login']);
       },
       (error: HttpErrorResponse) => {
         console.log(error);
-      }
+      },
     );
   }
 }

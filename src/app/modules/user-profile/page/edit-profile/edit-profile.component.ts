@@ -1,10 +1,10 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import { User } from "@app/models/user";
-import { UserService } from "@core/services/user.service";
-import {Constants} from "@shared/constants";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HttpErrorResponse} from "@angular/common/http";
-import {Router} from "@angular/router";
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { User } from '@app/models/user';
+import { UserService } from '@core/services/user.service';
+import { Constants } from '@shared/constants';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-profile',
@@ -38,7 +38,7 @@ export class EditProfileComponent implements OnInit {
     }, { validators: this.passwordMatcher });
   }
 
-  onFileChange($event: any): void {
+  onFileChange($event): void {
     if ($event.target.files && $event.target.files.length) {
       const uploadedFile = $event.target.files[0];
 
