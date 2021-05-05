@@ -11,7 +11,6 @@ import { UserService } from '@core/services/user.service';
 export class UserListComponent implements OnInit {
 
   users: User[];
-  loading: boolean;
   readonly CLOUDINARY_URL = Constants.CLOUDINARY_URL;
 
   constructor(private userService: UserService) {
