@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   get isLoggedIn(): boolean {
-    return !!(localStorage.getItem('authHeader'));
+    return !!(localStorage.getItem('authHeader') && localStorage.getItem('currentUser'));
   }
 
   authUser(searchQueryString: string): Observable<AuthDetails> {

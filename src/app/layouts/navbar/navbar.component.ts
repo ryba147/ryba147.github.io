@@ -14,6 +14,10 @@ export class NavbarComponent implements OnInit {
 
   constructor(private userService: UserService) {}
 
+  isDisabled(): boolean {
+    return false;
+  }
+
   ngOnInit(): void {
     this.currentUser = this.userService.getUser();
   }

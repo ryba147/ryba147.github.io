@@ -8,7 +8,7 @@ import { RegistrationComponent } from '@modules/auth/page/registration/registrat
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {

@@ -1,0 +1,17 @@
+<div class="container">
+<div class="caption">User list</div>
+<div class="list-wrapper">
+  <ul class="list">
+    <li *ngFor='let user of users' class="list-item">
+      <div>
+        <img src="{{CLOUDINARY_URL}}/{{user.img_name}}" onerror="this.src='assets/img/user.svg';"
+             class="list-item-image" alt="Profile photo">
+      </div>
+      <div class="list-item-content">
+        <h4>{{user.username}}</h4>
+        <p>{{user.email}}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+</div>
