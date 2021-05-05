@@ -3,9 +3,13 @@
 @import "typography";
 @import "mixins";
 
-.announcement-creation-container {
+.container {
+  padding-bottom: 14px;
+}
+
+.info-editor-container {
   background-color: $white;
-  width: 70%;
+  width: 50%;
   height: max-content;
   margin: 0 auto;
   overflow: hidden;

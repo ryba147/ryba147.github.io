@@ -6,10 +6,12 @@ import { UserProfileComponent } from '@modules/user-profile/page/user-profile/us
 import { UserListComponent } from '@modules/user-profile/page/user-list/user-list.component';
 import { RoleGuard } from '@core/guards/role.guard';
 import { AddAnnouncementComponent } from '@modules/user-profile/page/add-announcement/add-announcement.component';
+import { MyAnnouncementsComponent } from '@modules/user-profile/page/my-announcements/my-announcements.component';
 
 const routes: Routes = [
   { path: '', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'edit', component: EditProfileComponent, canActivate: [AuthGuard] },
+  { path: 'my-announcements', component: MyAnnouncementsComponent, canActivate: [AuthGuard] },
   {
     path: 'admin/user-list',
     component: UserListComponent,

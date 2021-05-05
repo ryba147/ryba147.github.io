@@ -1,7 +1,7 @@
 <div class="navbar">
   <a href="/home">Home</a>
   <a *roles="'admin'" href="/profile/admin/user-list">User list</a>
-  <a *roles="'admin'" href="/profile/admin/add-announcement">Add announcement</a>
+  <a href="/profile/admin/add-announcement">Add announcement</a>
   <a href="/profile">
     <div *ngIf="currentUser" class="profile-container">
       <span id="username">Welcome, <span id="navbar-name">{{currentUser.username}}</span></span>

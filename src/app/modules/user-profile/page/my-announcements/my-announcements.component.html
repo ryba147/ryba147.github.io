@@ -1,0 +1,17 @@
+<div *ngIf="!loading">
+  <div class="container">
+    <div *ngFor="let a of announcements " class="ann-container">
+      <img src="{{CLOUDINARY_URL}}/{{a.img_name}}" onerror="this.src='assets/img/8244.jpg';" alt="">
+      <div class="ann-name">{{a.title}}</div>
+      <div class="ann-date">{{a.event_date | date: 'EEEE, MMMM d, y'}}
+        <span class="ann-time">{{a.event_date | date: 'hh:mm a'}}</span>
+      </div>
+      <div class="ann-description">{{a.description}}</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loading">
+  <div class="loader">
+    <img src="assets/img/rainbow.gif" alt="loader animation">
+  </div>
+</div>
