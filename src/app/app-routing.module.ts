@@ -4,6 +4,7 @@ import { ContentLayoutComponent } from '@app/layouts/content-layout/content-layo
 import { AuthGuard } from '@core/guards/auth.guard';
 import { LoginComponent } from '@modules/auth/page/login/login.component';
 import { RegistrationComponent } from '@modules/auth/page/registration/registration.component';
+import { PageNotFoundComponent } from '@shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
     component: RegistrationComponent
   },
   // Fallback when no prior routes is matched
-  { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  // { path: '**', redirectTo: 'home', pathMatch: 'full' }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

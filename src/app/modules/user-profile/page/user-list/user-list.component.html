@@ -2,7 +2,7 @@
 <div class="caption">User list</div>
 <div class="list-wrapper">
   <ul class="list">
-    <li *ngFor='let user of users' class="list-item">
+    <li *ngFor="let user of users" class="list-item">
       <div>
         <img src="{{CLOUDINARY_URL}}/{{user.img_name}}" onerror="this.src='assets/img/user.svg';"
              class="list-item-image" alt="Profile photo">
