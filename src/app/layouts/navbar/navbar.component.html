@@ -4,7 +4,8 @@
   <a href="/profile">
     <div *ngIf="currentUser" class="profile-container">
       <span id="username">Welcome, <span id="navbar-name">{{currentUser.username}}</span></span>
-      <img id="navbar-avatar" src="{{CLOUDINARY_URL}}/{{currentUser.img_name}}" alt="Profile photo">
+      <img id="navbar-avatar" src="{{CLOUDINARY_URL}}/{{currentUser.img_name}}" onerror="this.src='assets/img/user.svg';"
+           alt="Profile photo">
     </div>
   </a>
 </div>
