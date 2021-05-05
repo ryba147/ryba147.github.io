@@ -17,6 +17,7 @@ import { HeadingComponent } from './layouts/heading/heading.component';
 import { ErrorInterceptor } from '@core/interceptors/error.interceptor';
 import { HomeModule } from '@modules/home/home.module';
 import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
+import { RolesDirective } from '@shared/directives/roles.directive';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, NavbarComponent, HeadingComponent, ContentLayoutComponent],

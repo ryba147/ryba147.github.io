@@ -4,11 +4,19 @@ import { EditProfileComponent } from '@modules/user-profile/page/edit-profile/ed
 import { AuthGuard } from '@core/guards/auth.guard';
 import { UserProfileComponent } from '@modules/user-profile/page/user-profile/user-profile.component';
 import { UserListComponent } from '@modules/user-profile/page/user-list/user-list.component';
+import { RoleGuard } from '@core/guards/role.guard';
 
 const routes: Routes = [
-  { path: '', component: UserProfileComponent },
-  { path: 'edit', component: EditProfileComponent },
-  { path: 'user-list', component: UserListComponent },
+  { path: '', component: UserProfileComponent, canActivate: [AuthGuard] },
+  { path: 'edit', component: EditProfileComponent, canActivate: [AuthGuard] },
+  {
+    path: 'admin/user-list',
+    component: UserListComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: {
+      expectedRole: 'admin'
+    },
+  },
 ];
 
 @NgModule({
