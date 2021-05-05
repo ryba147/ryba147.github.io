@@ -16,7 +16,7 @@ export class AnnouncementService {
   }
 
   getAnnouncementsByAuthorId(id: number): Observable<Announcement[]> {
-    return this.http.get<Announcement[]>(`${Constants.API_URL}/announcements`, {
+    return this.http.get<Announcement[]>(`${Constants.API_URL}/announcements/filter_by`, {
       params: new HttpParams().set('author_id', id.toString()),
     });
   }

@@ -25,12 +25,17 @@ export class UserProfileComponent implements OnInit {
   }
 
   userAnnouncements(): void {
-    this.announcementService.getAnnouncementsByAuthorId(this.currentUser.id)
-      .subscribe((data) => this.userAnnouncementsNo = data.length);
+    this.announcementService
+      .getAnnouncementsByAuthorId(this.currentUser.id)
+      .subscribe((data) => {
+        console.log(data);
+        this.userAnnouncementsNo = data.length;
+      });
   }
 
   ngOnInit(): void {
     this.currentUser = this.userService.getUser();
+    console.log(this.currentUser.id);
     this.userAnnouncements();
   }
 }

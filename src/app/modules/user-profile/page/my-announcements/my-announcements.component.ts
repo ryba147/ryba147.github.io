@@ -13,6 +13,7 @@ import { UserService } from '@core/services/user.service';
 export class MyAnnouncementsComponent implements OnInit {
 
   announcements: Announcement[];
+  userAnnouncementsNo = 0;
   currentUser: User;
   loading = false;
   readonly CLOUDINARY_URL = Constants.CLOUDINARY_URL;
@@ -25,11 +26,11 @@ export class MyAnnouncementsComponent implements OnInit {
     this.announcementService.getAnnouncementsByAuthorId(this.currentUser.id).subscribe((data) => {
       this.loading = false;
       this.announcements = data;
+      this.userAnnouncementsNo = data.length;
     });
   }
 
   ngOnInit(): void {
     this.getMyAnnouncements();
   }
-
 }

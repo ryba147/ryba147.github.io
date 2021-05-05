@@ -1,3 +1,4 @@
+<div *ngIf="userAnnouncementsNo !== 0">
 <div *ngIf="!loading">
   <div class="container">
     <div *ngFor="let a of announcements " class="ann-container">
@@ -13,5 +14,12 @@
 <div *ngIf="loading">
   <div class="loader">
     <img src="assets/img/rainbow.gif" alt="loader animation">
+  </div>
+</div>
+</div>
+
+<div *ngIf="userAnnouncementsNo === 0">
+  <div class="nf-container">
+    <p>I have no announcements yet</p>
   </div>
 </div>
