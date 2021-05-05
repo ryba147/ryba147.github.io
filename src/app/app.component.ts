@@ -11,5 +11,5 @@ export class AppComponent {
   constructor(public router: Router) {
   }
 
-  title = 'lab3';
+  title = 'lab4';
 }
