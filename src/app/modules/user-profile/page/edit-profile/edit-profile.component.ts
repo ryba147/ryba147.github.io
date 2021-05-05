@@ -16,6 +16,8 @@ export class EditProfileComponent implements OnInit {
 
   currentUser: User;
   updForm: FormGroup;
+  loading = false;
+  fileFormMsg = 'Choose an image';
   readonly CLOUDINARY_URL = Constants.CLOUDINARY_URL;
 
   constructor(private userService: UserService, private router: Router, private fb: FormBuilder) {
@@ -41,6 +43,7 @@ export class EditProfileComponent implements OnInit {
   onFileChange($event): void {
     if ($event.target.files && $event.target.files.length) {
       const uploadedFile = $event.target.files[0];
+      this.fileFormMsg = uploadedFile.name;
 
       this.updForm.patchValue({
         file: uploadedFile
@@ -55,10 +58,12 @@ export class EditProfileComponent implements OnInit {
   }
 
   updateUserInfo(): void {
+    this.loading = true;
     this.userService.updateUser(this.currentUser.id, this.toFormData(this.updForm.value))
       .subscribe(
         (response) => {
           alert('User info was updated');
+          this.loading = false;
           this.userService.setUser(response);
           window.location.reload();
         },

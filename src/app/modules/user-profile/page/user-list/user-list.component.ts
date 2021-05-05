@@ -11,13 +11,16 @@ import { UserService } from '@core/services/user.service';
 export class UserListComponent implements OnInit {
 
   users: User[];
+  loading = false;
   readonly CLOUDINARY_URL = Constants.CLOUDINARY_URL;
 
   constructor(private userService: UserService) {
   }
 
   getUsers(): void {
+    this.loading = true;
     this.userService.getUserList().subscribe((data) => {
+      this.loading = false;
       this.users = data;
     });
   }

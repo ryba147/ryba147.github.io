@@ -13,7 +13,7 @@ import { Constants } from '@shared/constants';
 export class RegistrationComponent implements OnInit {
 
   regForm: FormGroup;
-  userRole = 'regular';
+  userRole = "regular";
 
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
     this.buildForm();

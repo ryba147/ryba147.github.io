@@ -5,6 +5,7 @@ import { AuthGuard } from '@core/guards/auth.guard';
 import { UserProfileComponent } from '@modules/user-profile/page/user-profile/user-profile.component';
 import { UserListComponent } from '@modules/user-profile/page/user-list/user-list.component';
 import { RoleGuard } from '@core/guards/role.guard';
+import { AddAnnouncementComponent } from '@modules/user-profile/page/add-announcement/add-announcement.component';
 
 const routes: Routes = [
   { path: '', component: UserProfileComponent, canActivate: [AuthGuard] },
@@ -12,6 +13,14 @@ const routes: Routes = [
   {
     path: 'admin/user-list',
     component: UserListComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: {
+      expectedRole: 'admin'
+    },
+  },
+  {
+    path: 'admin/add-announcement',
+    component: AddAnnouncementComponent,
     canActivate: [AuthGuard, RoleGuard],
     data: {
       expectedRole: 'admin'

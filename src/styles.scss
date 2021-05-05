@@ -34,3 +34,13 @@
   color: #C90032;
   padding-bottom: 10px;
 }
+
+.loader {
+  height: 756px;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: max-content;
+  margin: 0 auto;
+}

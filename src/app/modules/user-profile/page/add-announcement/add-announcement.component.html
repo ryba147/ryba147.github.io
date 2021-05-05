@@ -1,0 +1,58 @@
+<div class="caption">Add an announcement</div>
+
+<div *ngIf="!loading">
+<div class="container">
+  <div class="announcement-creation-container">
+<!--          <p>Form value: {{ annoForm.value | json }}</p>-->
+<!--          <p>Form status: {{ annoForm.status | json }}</p>-->
+<!--          <p>Form errors: {{ annoForm.errors | json }}</p>-->
+    <form [formGroup]="annoForm" (ngSubmit)="addAnnouncement()" class="login-reg-form" name="announcement">
+      <label for="titleInput">Title</label>
+      <input formControlName="title" class="red-input" type="text" id="titleInput">
+      <div *ngIf="f.title.touched && f.title.errors" class="invalid-feedback">
+        <div *ngIf="f.title.errors.required">Title is required</div>
+        <div *ngIf="f.title.errors.minlength">Minimum length is 5</div>
+        <div *ngIf="f.title.errors.maxlength">Maximum length is 80</div>
+      </div>
+
+      <label for="descriptionInput">Description</label>
+      <textarea formControlName="description" class="description-area" id="descriptionInput"></textarea>
+      <div *ngIf="f.description.touched && f.description.errors" class="invalid-feedback">
+        <div *ngIf="f.description.errors.required">Description is required</div>
+        <div *ngIf="f.description.errors.minlength">Minimum length is 5</div>
+        <div *ngIf="f.description.errors.maxlength">Maximum length is 500</div>
+      </div>
+
+      <label for="datetime">Date</label>
+      <input formControlName="event_date" name="event_date" id="datetime" type="datetime-local">
+
+      <label for="locationInput">Location</label>
+      <input formControlName="location" name="location" class="red-input" type="text" id="locationInput">
+
+      <div class="radio-title">Type</div>
+      <div class="signup-form-radio">
+        <label for="publicChoice">Public</label>
+        <input [checked]="true" (change)="changeAnnouncementType($event)"
+               type="radio" id="publicChoice" name="announcement_type" value="1">
+
+        <label for="localChoice">Local</label>
+        <input (change)="changeAnnouncementType($event)" type="radio" id="localChoice" name="announcement_type" value="2">
+      </div>
+
+      <label class="file-upload">
+        <input (change)="onFileChange($event)" name="file" type="file" accept=".jpg, .jpeg, .png">
+        <span>{{fileFormMsg}}</span>
+      </label>
+
+      <div class="submit-button-container">
+        <button [disabled]="annoForm.invalid" class="submit-form-button" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+<div *ngIf="loading">
+  <div class="loader">
+    <img src="assets/img/rainbow.gif" alt="loader animation">
+  </div>
+</div>

@@ -11,6 +11,10 @@ export class AnnouncementService {
 
   constructor(private http: HttpClient) {  }
 
+  createAnnouncement(data: FormData): Observable<Announcement> {
+    return this.http.post<Announcement>(`${Constants.API_URL}/announcements`, data, {responseType: 'json'});
+  }
+
   getAnnouncementList(): Observable<Announcement[]> {
     return this.http.get<Announcement[]>(`${Constants.API_URL}/announcements`);
   }
