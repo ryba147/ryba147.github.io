@@ -73,7 +73,8 @@ export class EditProfileComponent implements OnInit {
 
   deleteAccount(): void {
     this.userService.deleteUser(this.currentUser.id).subscribe(response => {
-      console.log(response);
+      localStorage.clear();
+      window.location.reload();
     });
   }
 
