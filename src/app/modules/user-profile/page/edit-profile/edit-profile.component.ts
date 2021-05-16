@@ -5,6 +5,7 @@ import { Constants } from '@shared/constants';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { DataService } from '@core/services/data.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -20,7 +21,10 @@ export class EditProfileComponent implements OnInit {
   fileFormMsg = 'Choose an image';
   readonly CLOUDINARY_URL = Constants.CLOUDINARY_URL;
 
-  constructor(private userService: UserService, private router: Router, private fb: FormBuilder) {
+  constructor(private userService: UserService,
+    private dataService: DataService,
+    private router: Router,
+    private fb: FormBuilder) {
     this.buildForm();
   }
 
@@ -59,7 +63,7 @@ export class EditProfileComponent implements OnInit {
 
   updateUserInfo(): void {
     this.loading = true;
-    this.userService.updateUser(this.currentUser.id, this.toFormData(this.updForm.value))
+    this.userService.updateUser(this.currentUser.id, this.dataService.toFormData(this.updForm.value))
       .subscribe(
         (response) => {
           alert('User info was updated');
@@ -76,16 +80,6 @@ export class EditProfileComponent implements OnInit {
       localStorage.clear();
       window.location.reload();
     });
-  }
-
-  toFormData<T>(formValue: T): FormData{
-    const formData = new FormData();
-
-    for (const key of Object.keys(formValue)) {
-      const value = formValue[key];
-      formData.append(key, value);
-    }
-    return formData;
   }
 
   ngOnInit(): void {

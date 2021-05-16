@@ -86,7 +86,7 @@ describe('UserService', () => {
     );
     expect(req.request.method).toBe('DELETE');
 
-    req.flush(req);
+    req.flush(authDetails);
     httpMock.verify();
   });
 

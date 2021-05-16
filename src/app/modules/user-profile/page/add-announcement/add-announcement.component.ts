@@ -6,6 +6,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { AnnouncementService } from '@core/services/announcement.service';
 import { User } from '@app/models/user';
 import { UserService } from '@core/services/user.service';
+import { DataService } from '@core/services/data.service';
 
 @Component({
   selector: 'app-add-announcement',
@@ -23,6 +24,7 @@ export class AddAnnouncementComponent implements OnInit {
 
   constructor(private announcementService: AnnouncementService,
     private userService: UserService,
+    private dataService: DataService,
     private router: Router,
     private fb: FormBuilder) {
     this.buildForm();
@@ -66,7 +68,7 @@ export class AddAnnouncementComponent implements OnInit {
       author_id: this.currentUser.id
     });
     console.log(this.annoForm.value);
-    this.announcementService.createAnnouncement(this.toFormData(this.annoForm.value))
+    this.announcementService.createAnnouncement(this.dataService.toFormData(this.annoForm.value))
       .subscribe(
         (response) => {
           console.log(response);
@@ -76,16 +78,6 @@ export class AddAnnouncementComponent implements OnInit {
         },
         (error: HttpErrorResponse) => console.log(error)
       );
-  }
-
-  toFormData<T>(formValue: T): FormData{
-    const formData = new FormData();
-
-    for (const key of Object.keys(formValue)) {
-      const value = formValue[key];
-      formData.append(key, value);
-    }
-    return formData;
   }
 
   ngOnInit(): void {

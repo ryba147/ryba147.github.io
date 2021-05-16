@@ -72,7 +72,7 @@ describe('AuthService', () => {
     const req = httpMock.expectOne(`${Constants.API_URL}/users/login?${queryLoginString}`, 'login call to API');
     expect(req.request.method).toBe('GET');
 
-    req.flush(req);
+    req.flush(authDetails);
     httpMock.verify();
   });
 

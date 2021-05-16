@@ -63,7 +63,7 @@ describe('EditProfileComponent', () => {
   });
 
   it('should track file input change', () => {
-    const input  = fixture.debugElement.query(By.css('input[type=file]')).nativeElement;
+    const input = fixture.debugElement.query(By.css('input[type=file]')).nativeElement;
     spyOn(component, 'onFileChange');
     input.dispatchEvent(new Event('change'));
     expect(component.onFileChange).toHaveBeenCalled();
