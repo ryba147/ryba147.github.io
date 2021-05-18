@@ -48,7 +48,7 @@ window.addEventListener('load', () => {
 
                     const data = JSON.parse(request.response);
                     localStorage.setItem('userData', JSON.stringify((data.userData)));
-                    localStorage.setItem('basicAuthToken', data.basicAuthToken);
+                    localStorage.setItem('basicAuthToken', data.authHeader);
                 }
             };
 

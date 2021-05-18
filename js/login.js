@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
             alert('Login success');
             // as we parsed our json we need to revert userData back to json
             localStorage.setItem('userData', JSON.stringify((data.userData)));
-            localStorage.setItem('basicAuthToken', data.basicAuthToken);
+            localStorage.setItem('basicAuthToken', data.authHeader);
             window.location.href = 'logged.html';
         } else if (request.status === 404) {
             alert('Invalid username or password');

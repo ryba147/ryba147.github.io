@@ -604,8 +604,7 @@ button:hover {
 }
 
 .info-row {
-  /*margin: 0 auto;*/
-  margin-right: 50px;
+  margin: 0 auto;
 }
 
 .caption {
