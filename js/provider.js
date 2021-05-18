@@ -62,6 +62,7 @@ window.addEventListener('load', () => {
                 output.innerHTML = fileList[0].name;
             });
         }
+        if (window.location.toString().includes('chat.html')) { }
     } else if (window.location.toString().includes('index.html')) {
     } else {
         window.location.replace('login.html');

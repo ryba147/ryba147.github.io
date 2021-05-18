@@ -1,0 +1,31 @@
+.chat-container {
+  padding: 15px;
+  font-size: 18px;
+
+  .chat-controls {
+    display: block;
+    position: absolute;
+    bottom: 180px;
+    right: 20px;
+  }
+  #myMessage {
+    height: 35px;
+    width: 200px;
+  }
+}
+
+.chat-footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.chat-button {
+  border: 1px dashed salmon;
+  border-radius: 10px;
+  background: seashell;
+
+  a {
+    display: block;
+    padding: 12px 60px;
+  }
+}

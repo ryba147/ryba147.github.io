@@ -787,4 +787,34 @@ button:hover {
   display: none;
 }
 
+.chat-container {
+  padding: 15px;
+  font-size: 18px;
+}
+.chat-container .chat-controls {
+  display: block;
+  position: absolute;
+  bottom: 180px;
+  right: 20px;
+}
+.chat-container #myMessage {
+  height: 35px;
+  width: 200px;
+}
+
+.chat-footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.chat-button {
+  border: 1px dashed salmon;
+  border-radius: 10px;
+  background: seashell;
+}
+.chat-button a {
+  display: block;
+  padding: 12px 60px;
+}
+
 /*# sourceMappingURL=styles.css.map */

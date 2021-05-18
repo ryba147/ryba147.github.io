@@ -13,9 +13,9 @@
 <script type="text/javascript">
     $(document).ready(function () {
         const socket = io.connect('http://localhost:5000');
-        // const user = JSON.parse(localStorage.getItem('userData'));
+        const user = JSON.parse(localStorage.getItem('userData'));
         socket.on('connect', function () {
-            socket.send('User has connected');
+            socket.send('<strong>' + user.username + '</strong> ' + 'has connected');
         });
 
         socket.on('message', function (msg) {
@@ -24,7 +24,7 @@
         });
 
         $('#sendButton').on('click', function () {
-            socket.send($('#myMessage').val());
+            socket.send('<strong>' + user.username + '</strong>: ' + $('#myMessage').val());
             $('#myMessage').val('');
         });
     });
@@ -42,14 +42,14 @@
         </div>
     </a>
 </div>
-
-<ul id="messages">
-
-</ul>
-<input type="text" id="myMessage">
-<button id="sendButton">Send</button>
-
-<footer class="footer">
+<div class="chat-container">
+    <ul id="messages"></ul>
+    <div class="chat-controls">
+        <input type="text" id="myMessage" required>
+        <button id="sendButton">Send</button>
+    </div>
+</div>
+<footer class="footer chat-footer">
     <div class="footer-right-social">
         <a href="https://www.facebook.com/"><img src="img/footer/facebook.svg" alt=""></a>
         <a href="https://www.instagram.com/"><img src="img/footer/instagram.svg" alt=""></a>
