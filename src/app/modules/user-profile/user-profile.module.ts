@@ -8,6 +8,7 @@ import { EditProfileComponent } from './page/edit-profile/edit-profile.component
 import { UserListComponent } from './page/user-list/user-list.component';
 import { AddAnnouncementComponent } from './page/add-announcement/add-announcement.component';
 import { MyAnnouncementsComponent } from './page/my-announcements/my-announcements.component';
+import { UserChatComponent } from './page/user-chat/user-chat.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MyAnnouncementsComponent } from './page/my-announcements/my-announcemen
     EditProfileComponent,
     UserListComponent,
     AddAnnouncementComponent,
-    MyAnnouncementsComponent
+    MyAnnouncementsComponent,
+    UserChatComponent
   ],
   imports: [
     CommonModule,

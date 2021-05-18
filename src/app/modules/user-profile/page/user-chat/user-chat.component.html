@@ -1,0 +1,14 @@
+<form [formGroup]="chatForm" (ngSubmit)="sendMessage()" action="">
+  <ul>
+    <li *ngFor="let chatMessage of webSocketService.chatMessages">
+      <strong>{{chatMessage.username}}</strong>
+      <span>{{chatMessage.message}}</span>
+    </li>
+  </ul>
+
+  <input type="text" formControlName="username">
+  <input type="text" formControlName="message">
+  <div class="submit-button-container">
+    <button class="submit-form-button" type="submit">Submit</button>
+  </div>
+</form>
